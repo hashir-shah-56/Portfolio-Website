@@ -1,0 +1,396 @@
+/* =======================================================
+                        HERO.CSS
+======================================================= */
+
+
+/* =======================================================
+                    HERO SECTION
+======================================================= */
+
+.hero {
+
+    position: relative;
+
+    min-height: calc(100vh - 120px);
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+}
+
+
+/* =======================================================
+                    HERO CONTENT
+======================================================= */
+
+.hero-content {
+
+    display: grid;
+
+    grid-template-columns: 1.1fr .9fr;
+
+    align-items: center;
+
+    gap: var(--space-80);
+
+}
+
+
+/* =======================================================
+                    LEFT SIDE
+======================================================= */
+
+.hero-left {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+}
+
+
+/* =======================================================
+                HERO GREETING
+======================================================= */
+
+.hero-greeting {
+
+    margin-bottom: var(--space-16);
+
+    color: var(--color-accent);
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+}
+
+
+/* =======================================================
+                HERO TITLE
+======================================================= */
+
+.hero-title {
+
+    max-width: 650px;
+
+    margin-bottom: var(--space-24);
+
+}
+
+.hero-title span {
+
+    color: var(--color-accent);
+
+}
+
+
+/* =======================================================
+                HERO SUBTITLE
+======================================================= */
+
+.hero-subtitle {
+
+    margin-bottom: var(--space-24);
+
+}
+
+
+/* =======================================================
+                HERO DESCRIPTION
+======================================================= */
+
+.hero-description {
+
+    max-width: 600px;
+
+    margin-bottom: var(--space-40);
+
+}
+
+
+/* =======================================================
+                BUTTON GROUP
+======================================================= */
+
+.hero-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--space-20);
+
+}
+
+
+/* =======================================================
+                    RIGHT SIDE
+======================================================= */
+
+.hero-right {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+/* =======================================================
+                    IMAGE WRAPPER
+======================================================= */
+
+.hero-image {
+
+    position: relative;
+
+    width: 500px;
+
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+/* =======================================================
+                    IMAGE
+======================================================= */
+
+.hero-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: var(--radius-xl);
+
+    border: var(--border-thin);
+
+    box-shadow: var(--shadow-lg);
+
+    transition:
+        transform var(--transition-normal),
+        box-shadow var(--transition-normal);
+
+}
+
+.hero-image:hover img {
+
+    transform: scale(1.03);
+
+    box-shadow: var(--glow-lg);
+
+}
+
+
+/* =======================================================
+                IMAGE GLOW
+======================================================= */
+
+.hero-image::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+
+    height: 420px;
+
+    border-radius: 50%;
+
+    background: rgba(57, 255, 20, .12);
+
+    filter: blur(110px);
+
+    z-index: -1;
+
+}
+
+
+/* =======================================================
+                    STATS
+======================================================= */
+
+.hero-stats {
+
+    display: flex;
+
+    gap: var(--space-24);
+
+    margin-top: var(--space-64);
+
+}
+
+
+/* =======================================================
+                    STAT CARD
+======================================================= */
+
+.hero-stat {
+
+    min-width: 140px;
+
+    padding: var(--space-24);
+
+    border: var(--border-thin);
+
+    border-radius: var(--radius-lg);
+
+    background: var(--glass-bg);
+
+    backdrop-filter: blur(var(--glass-blur));
+
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+
+    text-align: center;
+
+    transition:
+        transform var(--transition-normal),
+        border-color var(--transition-normal),
+        box-shadow var(--transition-normal);
+
+}
+
+.hero-stat:hover {
+
+    transform: translateY(-8px);
+
+    border-color: var(--color-accent);
+
+    box-shadow: var(--glow-md);
+
+}
+
+
+/* =======================================================
+                STAT NUMBER
+======================================================= */
+
+.hero-stat h3 {
+
+    margin-bottom: var(--space-8);
+
+    color: var(--color-accent);
+
+}
+
+
+/* =======================================================
+                STAT LABEL
+======================================================= */
+
+.hero-stat p {
+
+    color: var(--color-text-secondary);
+
+}
+
+
+/* =======================================================
+                SCROLL INDICATOR
+======================================================= */
+
+.scroll-indicator {
+
+    position: absolute;
+
+    bottom: var(--space-32);
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: var(--space-12);
+
+}
+
+.scroll-indicator span {
+
+    font-size: var(--fs-sm);
+
+    color: var(--color-text-muted);
+
+}
+
+.scroll-indicator i {
+
+    color: var(--color-accent);
+
+    font-size: 1.25rem;
+
+}
+
+
+/* =======================================================
+                BACKGROUND DECORATION
+======================================================= */
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -250px;
+
+    right: -250px;
+
+    width: 650px;
+
+    height: 650px;
+
+    border-radius: 50%;
+
+    background: rgba(57, 255, 20, .05);
+
+    filter: blur(160px);
+
+    z-index: -2;
+
+}
+
+.hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: -180px;
+
+    left: -180px;
+
+    width: 420px;
+
+    height: 420px;
+
+    border-radius: 50%;
+
+    background: rgba(57, 255, 20, .04);
+
+    filter: blur(130px);
+
+    z-index: -2;
+
+}

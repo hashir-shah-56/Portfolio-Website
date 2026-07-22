@@ -1,0 +1,251 @@
+/* =======================================================
+                    GOOGLE FONTS
+======================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+
+/* =======================================================
+                    ROOT VARIABLES
+======================================================= */
+
+:root {
+
+    /* ==========================================
+                    COLORS
+    ========================================== */
+
+    /* Background */
+
+    --color-bg-primary: #050505;
+    --color-bg-secondary: #0F0F0F;
+    --color-bg-tertiary: #171717;
+
+    /* Glass */
+
+    --color-glass: rgba(255, 255, 255, 0.05);
+    --color-glass-hover: rgba(255, 255, 255, 0.08);
+
+    /* Text */
+
+    --color-text-primary: #F5F5F5;
+    --color-text-secondary: #BDBDBD;
+    --color-text-muted: #7A7A7A;
+
+    /* Accent */
+
+    --color-accent: #85ee00;
+    --color-accent-hover: #71be0b;
+    --color-accent-dark: #4f8804;
+
+    /* Border */
+
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-border-light: rgba(255, 255, 255, 0.15);
+
+    /* Status */
+
+    --color-success: #00D26A;
+    --color-warning: #F7B500;
+    --color-danger: #FF4D4D;
+
+
+
+    /* ==========================================
+                    TYPOGRAPHY
+    ========================================== */
+
+    --font-heading: "Space Grotesk", sans-serif;
+
+    --font-body: "Inter", sans-serif;
+
+
+
+    /* ==========================================
+                    FONT WEIGHTS
+    ========================================== */
+
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+
+
+
+    /* ==========================================
+                    FONT SIZES
+    ========================================== */
+
+    --fs-xs: 0.75rem;
+    --fs-sm: 0.875rem;
+    --fs-md: 1rem;
+    --fs-lg: 1.125rem;
+    --fs-xl: 1.25rem;
+
+    --fs-h6: 1.25rem;
+    --fs-h5: 1.5rem;
+    --fs-h4: 2rem;
+    --fs-h3: 2.5rem;
+    --fs-h2: 3.5rem;
+    --fs-h1: 5rem;
+
+    --fs-display: 6.5rem;
+
+
+
+    /* ==========================================
+                    LINE HEIGHT
+    ========================================== */
+
+    --lh-tight: 1.1;
+    --lh-normal: 1.5;
+    --lh-relaxed: 1.8;
+
+
+
+    /* ==========================================
+                    LETTER SPACING
+    ========================================== */
+
+    --ls-tight: -1px;
+    --ls-normal: 0;
+    --ls-wide: 2px;
+    --ls-extra: 4px;
+
+
+
+    /* ==========================================
+                    SPACING
+    ========================================== */
+
+    --space-4: 4px;
+    --space-8: 8px;
+    --space-12: 12px;
+    --space-16: 16px;
+    --space-20: 20px;
+    --space-24: 24px;
+    --space-32: 32px;
+    --space-40: 40px;
+    --space-48: 48px;
+    --space-56: 56px;
+    --space-64: 64px;
+    --space-80: 80px;
+    --space-96: 96px;
+    --space-120: 120px;
+    --space-160: 160px;
+
+
+
+    /* ==========================================
+                    CONTAINER
+    ========================================== */
+
+    --container-width: 1400px;
+
+    --container-padding: 32px;
+
+
+
+    /* ==========================================
+                    BORDER RADIUS
+    ========================================== */
+
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 30px;
+    --radius-xl: 40px;
+    --radius-round: 999px;
+
+
+
+    /* ==========================================
+                    BORDERS
+    ========================================== */
+
+    --border-thin: 1px solid var(--color-border);
+
+    --border-light: 1px solid var(--color-border-light);
+
+
+
+    /* ==========================================
+                    SHADOWS
+    ========================================== */
+
+    --shadow-sm:
+        0 10px 25px rgba(0, 0, 0, .18);
+
+    --shadow-md:
+        0 15px 35px rgba(0, 0, 0, .28);
+
+    --shadow-lg:
+        0 25px 60px rgba(0, 0, 0, .45);
+
+
+
+    /* ==========================================
+                    NEON GLOW
+    ========================================== */
+
+    --glow-sm:
+        0 0 12px rgba(57, 255, 20, .18);
+
+    --glow-md:
+        0 0 20px rgba(57, 255, 20, .25),
+        0 0 45px rgba(57, 255, 20, .12);
+
+    --glow-lg:
+        0 0 30px rgba(57, 255, 20, .40),
+        0 0 60px rgba(57, 255, 20, .20);
+
+
+
+    /* ==========================================
+                    GLASSMORPHISM
+    ========================================== */
+
+    --glass-bg: rgba(255, 255, 255, .05);
+
+    --glass-bg-hover: rgba(255, 255, 255, .08);
+
+    --glass-border:
+        rgba(255, 255, 255, .08);
+
+    --glass-blur: 20px;
+
+
+
+    /* ==========================================
+                    TRANSITIONS
+    ========================================== */
+
+    --transition-fast: .25s ease;
+
+    --transition-normal: .35s ease;
+
+    --transition-slow: .55s ease;
+
+
+
+    /* ==========================================
+                    Z-INDEX
+    ========================================== */
+
+    --z-background: -2;
+
+    --z-grid: -1;
+
+    --z-default: 1;
+
+    --z-navbar: 100;
+
+    --z-dropdown: 500;
+
+    --z-overlay: 900;
+
+    --z-modal: 950;
+
+    --z-cursor: 9999;
+
+}

@@ -1,0 +1,707 @@
+/* =======================================================
+                    ANIMATIONS.CSS
+======================================================= */
+
+
+/* =======================================================
+                    KEYFRAMES
+======================================================= */
+
+/* Fade In */
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* Fade Up */
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(40px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* Fade Down */
+
+@keyframes fadeDown {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(-40px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* Fade Left */
+
+@keyframes fadeLeft {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateX(-60px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateX(0);
+
+    }
+
+}
+
+
+/* Fade Right */
+
+@keyframes fadeRight {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateX(60px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateX(0);
+
+    }
+
+}
+
+
+/* Zoom */
+
+@keyframes zoomIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(.85);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+
+}
+
+
+/* Floating */
+
+@keyframes float {
+
+    0% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-14px);
+
+    }
+
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* Pulse Glow */
+
+@keyframes pulseGlow {
+
+    0% {
+
+        box-shadow: 0 0 0 rgba(57, 255, 20, .2);
+
+    }
+
+    50% {
+
+        box-shadow: 0 0 30px rgba(57, 255, 20, .35);
+
+    }
+
+    100% {
+
+        box-shadow: 0 0 0 rgba(57, 255, 20, .2);
+
+    }
+
+}
+
+
+/* Rotate */
+
+@keyframes rotateSlow {
+
+    from {
+
+        transform: rotate(0deg);
+
+    }
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+
+/* Scroll Indicator */
+
+@keyframes scrollBounce {
+
+    0% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(10px);
+
+    }
+
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* Shimmer */
+
+@keyframes shimmer {
+
+    0% {
+
+        background-position: -200%;
+
+    }
+
+    100% {
+
+        background-position: 200%;
+
+    }
+
+}
+
+
+/* Neon Border */
+
+@keyframes neonBorder {
+
+    0% {
+
+        border-color: rgba(57, 255, 20, .15);
+
+    }
+
+    50% {
+
+        border-color: rgba(57, 255, 20, .8);
+
+    }
+
+    100% {
+
+        border-color: rgba(57, 255, 20, .15);
+
+    }
+
+}
+
+
+/* =======================================================
+                REUSABLE CLASSES
+======================================================= */
+
+.fade-in {
+
+    animation: fadeIn .8s ease forwards;
+
+}
+
+.fade-up {
+
+    animation: fadeUp .8s ease forwards;
+
+}
+
+.fade-down {
+
+    animation: fadeDown .8s ease forwards;
+
+}
+
+.fade-left {
+
+    animation: fadeLeft .8s ease forwards;
+
+}
+
+.fade-right {
+
+    animation: fadeRight .8s ease forwards;
+
+}
+
+.zoom-in {
+
+    animation: zoomIn .8s ease forwards;
+
+}
+
+.float {
+
+    animation: float 5s ease-in-out infinite;
+
+}
+
+.pulse-glow {
+
+    animation: pulseGlow 3s ease-in-out infinite;
+
+}
+
+.rotate {
+
+    animation: rotateSlow 18s linear infinite;
+
+}
+
+.scroll-bounce {
+
+    animation: scrollBounce 2s ease infinite;
+
+}
+
+.neon-border {
+
+    animation: neonBorder 3s linear infinite;
+
+}
+
+
+/* =======================================================
+                HOVER UTILITIES
+======================================================= */
+
+.hover-lift {
+
+    transition:
+        transform var(--transition-normal),
+        box-shadow var(--transition-normal);
+
+}
+
+.hover-lift:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: var(--glow-md);
+
+}
+
+
+.hover-scale {
+
+    transition: transform var(--transition-normal);
+
+}
+
+.hover-scale:hover {
+
+    transform: scale(1.04);
+
+}
+
+
+.hover-rotate {
+
+    transition: transform var(--transition-normal);
+
+}
+
+.hover-rotate:hover {
+
+    transform: rotate(6deg);
+
+}
+
+
+/* =======================================================
+                DELAY UTILITIES
+======================================================= */
+
+.delay-1 {
+
+    animation-delay: .1s;
+
+}
+
+.delay-2 {
+
+    animation-delay: .2s;
+
+}
+
+.delay-3 {
+
+    animation-delay: .3s;
+
+}
+
+.delay-4 {
+
+    animation-delay: .4s;
+
+}
+
+.delay-5 {
+
+    animation-delay: .5s;
+
+}
+
+
+/* =======================================================
+                INITIAL HIDDEN STATE
+======================================================= */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:
+
+    opacity .8s ease,
+
+    transform .8s ease;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* Directions */
+
+.fade-left{
+
+    transform:translateX(-60px);
+
+}
+
+.fade-right{
+
+    transform:translateX(60px);
+
+}
+
+.fade-up{
+
+    transform:translateY(60px);
+
+}
+
+.fade-down{
+
+    transform:translateY(-60px);
+
+}
+
+
+/* Activated */
+
+.fade-left.active,
+
+.fade-right.active,
+
+.fade-up.active,
+
+.fade-down.active{
+
+    transform:translate(0);
+
+}
+
+/* =======================================================
+                SKILL BAR
+======================================================= */
+
+.skill-bar{
+
+    overflow:hidden;
+
+}
+
+.skill-progress{
+
+    transition:width 1.6s ease;
+
+}
+
+/* =======================================================
+                SCROLL PROGRESS
+======================================================= */
+
+.scroll-progress{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    height:3px;
+
+    width:0;
+
+    background:var(--color-accent);
+
+    z-index:99999;
+
+}
+
+
+/* =======================================================
+                SECTION ACTIVE
+======================================================= */
+
+.section-visible{
+
+    animation:fadeIn .8s ease forwards;
+
+}
+
+/* =======================================================
+                HERO SUBTITLE
+======================================================= */
+
+.hero-subtitle{
+
+    transition:
+
+    opacity .35s ease,
+
+    transform .35s ease;
+
+}
+
+
+
+/* =======================================================
+                FLOATING IMAGE
+======================================================= */
+
+.hero-image{
+
+    will-change: transform;
+
+}
+
+
+
+/* =======================================================
+                BUTTONS
+======================================================= */
+
+.btn{
+
+    transition:
+
+    transform .25s ease,
+
+    box-shadow .25s ease;
+
+}
+
+
+
+/* =======================================================
+                PROJECT CARDS
+======================================================= */
+
+.project-card,
+
+.service-card{
+
+    transform-style: preserve-3d;
+
+    transition:
+
+    transform .2s ease,
+
+    box-shadow .2s ease;
+
+    will-change: transform;
+
+}
+
+/* =======================================================
+                CURSOR GLOW
+======================================================= */
+
+.cursor-glow{
+
+    position:fixed;
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+    rgba(57,255,20,.18),
+    transparent 70%);
+
+    pointer-events:none;
+
+    transform:translate(-50%,-50%);
+
+    z-index:0;
+
+    filter:blur(25px);
+
+}
+
+
+
+/* =======================================================
+                PRELOADER
+======================================================= */
+
+.preloader{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#050505;
+
+    z-index:999999;
+
+    transition:opacity .6s ease;
+
+}
+
+.preloader.hide{
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+
+
+/* =======================================================
+                IMAGE
+======================================================= */
+
+img{
+
+    transition:opacity .5s ease;
+
+}
+
+img.loaded{
+
+    opacity:1;
+
+}
+
+
+
+/* =======================================================
+                REDUCED MOTION
+======================================================= */
+
+.reduced-motion *{
+
+    animation:none !important;
+
+    transition:none !important;
+
+}

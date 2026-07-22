@@ -1,0 +1,248 @@
+/* =======================================================
+                        RESET.CSS
+            Global Reset & Browser Normalization
+======================================================= */
+
+
+/* =======================================================
+                    UNIVERSAL RESET
+======================================================= */
+
+*,
+*::before,
+*::after {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+/* =======================================================
+                        HTML
+======================================================= */
+
+html {
+
+    scroll-behavior: smooth;
+
+    font-size: 100%;
+
+    -webkit-text-size-adjust: 100%;
+
+}
+
+
+/* =======================================================
+                        BODY
+======================================================= */
+
+body {
+
+    min-height: 100vh;
+
+    text-rendering: optimizeLegibility;
+
+    -webkit-font-smoothing: antialiased;
+
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+
+/* =======================================================
+                        IMAGES
+======================================================= */
+
+img,
+picture {
+
+    display: block;
+
+    max-width: 100%;
+
+    height: auto;
+
+}
+
+
+/* =======================================================
+                        MEDIA
+======================================================= */
+
+video,
+canvas,
+svg {
+
+    display: block;
+
+    max-width: 100%;
+
+}
+
+
+/* =======================================================
+                        LINKS
+======================================================= */
+
+a {
+
+    text-decoration: none;
+
+    color: inherit;
+
+}
+
+
+/* =======================================================
+                        LISTS
+======================================================= */
+
+ul,
+ol {
+
+    list-style: none;
+
+}
+
+
+/* =======================================================
+                        BUTTONS
+======================================================= */
+
+button {
+
+    border: none;
+
+    background: none;
+
+    outline: none;
+
+    cursor: pointer;
+
+    font: inherit;
+
+}
+
+
+/* =======================================================
+                        INPUTS
+======================================================= */
+
+input,
+textarea,
+select,
+button {
+
+    font: inherit;
+
+}
+
+
+/* =======================================================
+                        TEXTAREA
+======================================================= */
+
+textarea {
+
+    resize: vertical;
+
+}
+
+
+/* =======================================================
+                        TABLE
+======================================================= */
+
+table {
+
+    border-collapse: collapse;
+
+    border-spacing: 0;
+
+}
+
+
+/* =======================================================
+                    FORM ELEMENTS
+======================================================= */
+
+input,
+textarea,
+button,
+select {
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+}
+
+
+/* =======================================================
+                    QUOTES
+======================================================= */
+
+blockquote,
+q {
+
+    quotes: none;
+
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+
+    content: "";
+
+}
+
+
+/* =======================================================
+                    SELECTION
+======================================================= */
+
+::selection {
+
+    background: var(--color-accent);
+
+    color: var(--color-bg-primary);
+
+}
+
+
+/* =======================================================
+                    SCROLLBAR
+======================================================= */
+
+::-webkit-scrollbar {
+
+    width: 10px;
+
+}
+
+::-webkit-scrollbar-track {
+
+    background: var(--color-bg-primary);
+
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: var(--color-accent);
+
+    border-radius: var(--radius-round);
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: var(--color-accent-hover);
+
+}

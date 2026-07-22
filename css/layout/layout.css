@@ -1,0 +1,469 @@
+/* =======================================================
+                        LAYOUT.CSS
+            Global Layout & Reusable Structure
+======================================================= */
+
+
+/* =======================================================
+                    MAIN WRAPPER
+======================================================= */
+
+main {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* =======================================================
+                    CONTAINER
+======================================================= */
+
+.container {
+
+    width: min(100% - 4rem, var(--container-width));
+
+    margin-inline: auto;
+
+}
+
+
+/* =======================================================
+                    SECTION
+======================================================= */
+
+section {
+
+    position: relative;
+
+    padding-block: var(--space-120);
+
+    overflow: hidden;
+
+}
+
+
+/* =======================================================
+                FIRST SECTION (HERO)
+======================================================= */
+
+section:first-of-type {
+
+    padding-top: calc(var(--space-120) + 80px);
+
+}
+
+
+/* =======================================================
+                SECTION SPACING
+======================================================= */
+
+.section-small {
+
+    padding-block: var(--space-80);
+
+}
+
+.section-large {
+
+    padding-block: var(--space-160);
+
+}
+
+
+/* =======================================================
+                    FLEX UTILITIES
+======================================================= */
+
+.flex {
+
+    display: flex;
+
+}
+
+.flex-center {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+.flex-between {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+.flex-column {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+/* =======================================================
+                    GRID UTILITIES
+======================================================= */
+
+.grid {
+
+    display: grid;
+
+}
+
+.grid-2 {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: var(--space-48);
+
+}
+
+.grid-3 {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: var(--space-32);
+
+}
+
+.grid-4 {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: var(--space-24);
+
+}
+
+
+/* =======================================================
+                    GAP UTILITIES
+======================================================= */
+
+.gap-8 {
+
+    gap: var(--space-8);
+
+}
+
+.gap-16 {
+
+    gap: var(--space-16);
+
+}
+
+.gap-24 {
+
+    gap: var(--space-24);
+
+}
+
+.gap-32 {
+
+    gap: var(--space-32);
+
+}
+
+.gap-48 {
+
+    gap: var(--space-48);
+
+}
+
+.gap-64 {
+
+    gap: var(--space-64);
+
+}
+
+
+/* =======================================================
+                ALIGNMENT UTILITIES
+======================================================= */
+
+.items-center {
+
+    align-items: center;
+
+}
+
+.items-start {
+
+    align-items: flex-start;
+
+}
+
+.items-end {
+
+    align-items: flex-end;
+
+}
+
+.justify-center {
+
+    justify-content: center;
+
+}
+
+.justify-between {
+
+    justify-content: space-between;
+
+}
+
+.justify-start {
+
+    justify-content: flex-start;
+
+}
+
+.justify-end {
+
+    justify-content: flex-end;
+
+}
+
+
+/* =======================================================
+                WIDTH UTILITIES
+======================================================= */
+
+.w-100 {
+
+    width: 100%;
+
+}
+
+.max-w-sm {
+
+    max-width: 500px;
+
+}
+
+.max-w-md {
+
+    max-width: 700px;
+
+}
+
+.max-w-lg {
+
+    max-width: 900px;
+
+}
+
+.max-w-xl {
+
+    max-width: 1200px;
+
+}
+
+
+/* =======================================================
+                    HEIGHT UTILITIES
+======================================================= */
+
+.min-vh {
+
+    min-height: 100vh;
+
+}
+
+.full-height {
+
+    height: 100%;
+
+}
+
+
+/* =======================================================
+                    POSITION
+======================================================= */
+
+.relative {
+
+    position: relative;
+
+}
+
+.absolute {
+
+    position: absolute;
+
+}
+
+.fixed {
+
+    position: fixed;
+
+}
+
+
+/* =======================================================
+                    OVERFLOW
+======================================================= */
+
+.overflow-hidden {
+
+    overflow: hidden;
+
+}
+
+.overflow-visible {
+
+    overflow: visible;
+
+}
+
+
+/* =======================================================
+                    SPACING UTILITIES
+======================================================= */
+
+.mt-16 {
+
+    margin-top: var(--space-16);
+
+}
+
+.mt-24 {
+
+    margin-top: var(--space-24);
+
+}
+
+.mt-32 {
+
+    margin-top: var(--space-32);
+
+}
+
+.mt-48 {
+
+    margin-top: var(--space-48);
+
+}
+
+.mt-64 {
+
+    margin-top: var(--space-64);
+
+}
+
+.mb-16 {
+
+    margin-bottom: var(--space-16);
+
+}
+
+.mb-24 {
+
+    margin-bottom: var(--space-24);
+
+}
+
+.mb-32 {
+
+    margin-bottom: var(--space-32);
+
+}
+
+.mb-48 {
+
+    margin-bottom: var(--space-48);
+
+}
+
+.mb-64 {
+
+    margin-bottom: var(--space-64);
+
+}
+
+
+/* =======================================================
+                AUTO MARGINS
+======================================================= */
+
+.mx-auto {
+
+    margin-inline: auto;
+
+}
+
+.my-auto {
+
+    margin-block: auto;
+
+}
+
+
+/* =======================================================
+                    DIVIDER
+======================================================= */
+
+.section-divider {
+
+    width: 100%;
+
+    height: 1px;
+
+    background: var(--color-border);
+
+}
+
+
+/* =======================================================
+                CONTENT WRAPPER
+======================================================= */
+
+.content-wrapper {
+
+    max-width: 800px;
+
+}
+
+
+/* =======================================================
+                    IMAGE WRAPPER
+======================================================= */
+
+.image-wrapper {
+
+    width: 100%;
+
+    overflow: hidden;
+
+}
+
+
+/* =======================================================
+                    STACK
+======================================================= */
+
+.stack {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-24);
+
+}

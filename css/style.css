@@ -1,0 +1,424 @@
+@import url("/css/base/variable.css");
+@import url("/css/base/reset.css");
+@import url("/css/base/typography.css");
+@import url("/css/layout/layout.css");
+
+@import url("/css/components/buttons.css");
+@import url("/css/components/cards.css");
+@import url("/css/components/forms.css");
+
+@import url("/css/layout/navbar.css");
+@import url("/css/sections/hero.css");
+@import url("/css/sections/about.css");
+@import url("/css/sections/skills.css");
+@import url("/css/sections/projects.css");
+@import url("/css/sections/services.css");
+@import url("/css/sections/contact.css");
+@import url("/css/layout/footer.css");
+
+@import url("/css/animations.css");
+@import url("/css/responsive.css");
+
+/* =======================================================
+                    ROOT PAGE
+======================================================= */
+
+html{
+
+    scroll-behavior: smooth;
+
+    scroll-padding-top: 110px;
+
+}
+
+body{
+
+    background: var(--color-bg-primary);
+
+    color: var(--color-text-primary);
+
+    font-family: var(--font-body);
+
+    overflow-x: hidden;
+
+}
+
+
+/* =======================================================
+                CUSTOM SCROLLBAR
+======================================================= */
+
+::-webkit-scrollbar{
+
+    width: 10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background: var(--color-bg-secondary);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background: var(--color-accent);
+
+    border-radius: var(--radius-round);
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background: #5eff3d;
+
+}
+
+
+/* =======================================================
+                TEXT SELECTION
+======================================================= */
+
+::selection{
+
+    background: var(--color-accent);
+
+    color: var(--color-bg-primary);
+
+}
+
+::-moz-selection{
+
+    background: var(--color-accent);
+
+    color: var(--color-bg-primary);
+
+}
+
+
+/* =======================================================
+                DEFAULT SECTION
+======================================================= */
+
+.section{
+
+    padding: var(--space-120) 0;
+
+    position: relative;
+
+}
+
+
+/* =======================================================
+                SECTION HEADER
+======================================================= */
+
+.section-header{
+
+    max-width: 720px;
+
+    margin: 0 auto var(--space-72);
+
+    text-align: center;
+
+}
+
+.section-subtitle{
+
+    display: inline-block;
+
+    margin-bottom: var(--space-16);
+
+    color: var(--color-accent);
+
+    font-size: var(--fs-sm);
+
+    font-weight: var(--fw-semibold);
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+}
+
+.section-title{
+
+    margin-bottom: var(--space-24);
+
+}
+
+.section-description{
+
+    max-width: 650px;
+
+    margin-inline: auto;
+
+    color: var(--color-text-secondary);
+
+}
+
+
+/* =======================================================
+                GLASS EFFECT
+======================================================= */
+
+.glass{
+
+    background: var(--glass-bg);
+
+    border: var(--border-thin);
+
+    backdrop-filter: blur(var(--glass-blur));
+
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+
+}
+
+
+/* =======================================================
+                TEXT UTILITIES
+======================================================= */
+
+.text-center{
+
+    text-align: center;
+
+}
+
+.text-left{
+
+    text-align: left;
+
+}
+
+.text-right{
+
+    text-align: right;
+
+}
+
+.text-accent{
+
+    color: var(--color-accent);
+
+}
+
+.text-muted{
+
+    color: var(--color-text-muted);
+
+}
+
+
+/* =======================================================
+                FLEX UTILITIES
+======================================================= */
+
+.d-flex{
+
+    display: flex;
+
+}
+
+.align-center{
+
+    align-items: center;
+
+}
+
+.justify-center{
+
+    justify-content: center;
+
+}
+
+.justify-between{
+
+    justify-content: space-between;
+
+}
+
+.flex-column{
+
+    flex-direction: column;
+
+}
+
+.flex-wrap{
+
+    flex-wrap: wrap;
+
+}
+
+.gap-16{
+
+    gap: var(--space-16);
+
+}
+
+.gap-24{
+
+    gap: var(--space-24);
+
+}
+
+.gap-32{
+
+    gap: var(--space-32);
+
+}
+
+
+/* =======================================================
+                GRID UTILITIES
+======================================================= */
+
+.grid{
+
+    display: grid;
+
+}
+
+.grid-2{
+
+    grid-template-columns: repeat(2,1fr);
+
+}
+
+.grid-3{
+
+    grid-template-columns: repeat(3,1fr);
+
+}
+
+.grid-4{
+
+    grid-template-columns: repeat(4,1fr);
+
+}
+
+
+/* =======================================================
+                SPACING UTILITIES
+======================================================= */
+
+.mt-16{ margin-top: var(--space-16); }
+
+.mt-24{ margin-top: var(--space-24); }
+
+.mt-32{ margin-top: var(--space-32); }
+
+.mt-48{ margin-top: var(--space-48); }
+
+.mt-64{ margin-top: var(--space-64); }
+
+.mt-96{ margin-top: var(--space-96); }
+
+.mb-16{ margin-bottom: var(--space-16); }
+
+.mb-24{ margin-bottom: var(--space-24); }
+
+.mb-32{ margin-bottom: var(--space-32); }
+
+.mb-48{ margin-bottom: var(--space-48); }
+
+.mb-64{ margin-bottom: var(--space-64); }
+
+
+/* =======================================================
+                IMAGE UTILITIES
+======================================================= */
+
+.img-fluid{
+
+    width: 100%;
+
+    display: block;
+
+    height: auto;
+
+}
+
+.img-cover{
+
+    object-fit: cover;
+
+}
+
+.rounded{
+
+    border-radius: var(--radius-lg);
+
+}
+
+.circle{
+
+    border-radius: 50%;
+
+}
+
+
+/* =======================================================
+                VISIBILITY
+======================================================= */
+
+.hidden{
+
+    display: none !important;
+
+}
+
+.visible{
+
+    display: block;
+
+}
+
+
+/* =======================================================
+                DIVIDER
+======================================================= */
+
+.divider{
+
+    width: 100%;
+
+    height: 1px;
+
+    background: var(--color-border);
+
+    margin: var(--space-80) 0;
+
+}
+
+
+/* =======================================================
+                FOCUS STATES
+======================================================= */
+
+:focus-visible{
+
+    outline: 2px solid var(--color-accent);
+
+    outline-offset: 4px;
+
+}
+
+
+/* =======================================================
+                REDUCED MOTION
+======================================================= */
+
+@media (prefers-reduced-motion: reduce){
+
+    *{
+
+        animation: none !important;
+
+        transition: none !important;
+
+        scroll-behavior: auto !important;
+
+    }
+
+}
