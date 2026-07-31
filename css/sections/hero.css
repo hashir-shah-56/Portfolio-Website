@@ -179,21 +179,14 @@
 
     border-radius: var(--radius-xl);
 
-    border: var(--border-thin);
+    /*border: var(--border-thin);*/
+    border: 0.5px solid #f0f1ed;
 
     box-shadow: var(--shadow-lg);
 
     transition:
         transform var(--transition-normal),
         box-shadow var(--transition-normal);
-
-}
-
-.hero-image:hover img {
-
-    transform: scale(1.03);
-
-    box-shadow: var(--glow-lg);
 
 }
 
@@ -347,7 +340,7 @@
                 BACKGROUND DECORATION
 ======================================================= */
 
-.hero::before {
+/*.hero::before {
 
     content: "";
 
@@ -393,4 +386,4 @@
 
     z-index: -2;
 
-}
+}*/

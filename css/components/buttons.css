@@ -61,6 +61,8 @@
 
     background: var(--color-accent-hover);
 
+    color: var(--color-bg-primary);
+
     transform: translateY(-4px);
 
     box-shadow: var(--glow-md);

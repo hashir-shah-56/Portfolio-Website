@@ -10,9 +10,23 @@
 .services {
 
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0px;
 
 }
 
+.services .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.services .container .section-header{
+    display: flex;
+}
 
 /* =======================================================
                 SERVICES CONTAINER

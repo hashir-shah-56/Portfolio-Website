@@ -170,6 +170,25 @@ function highlightActiveLink() {
 window.addEventListener('scroll', highlightActiveLink);
 
 
+/*const downloadBtn = document.querySelector(".btn");
+
+downloadBtn.addEventListener("click", () => {
+
+    const link = document.createElement("a");
+
+    link.href = "../Portfolio Website/Images/Syed Hashir Abrar Shah - Resume.docx";
+
+    link.download = "Hashir_Shah_Resume.docx";
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+
+}); */
+
+
 /* =======================================================
                 SMOOTH SCROLL
 ======================================================= */
@@ -612,36 +631,6 @@ function rotateRole() {
 }
 
 setInterval(rotateRole, 2500);
-
-
-
-/* =======================================================
-                FLOATING HERO IMAGE
-======================================================= */
-
-const floatingImage = document.querySelector('.hero-image');
-
-function floatingAnimation() {
-
-    if (!floatingImage) return;
-
-    let time = Date.now() * 0.001;
-
-    floatingImage.style.transform =
-
-        `translateY(${Math.sin(time) * 8}px)`;
-
-}
-
-function floatLoop() {
-
-    floatingAnimation();
-
-    requestAnimationFrame(floatLoop);
-
-}
-
-floatLoop();
 
 
 

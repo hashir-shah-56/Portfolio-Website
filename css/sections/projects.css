@@ -10,22 +10,40 @@
 .projects {
 
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0px;
+    
+}
+
+.projects .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+}
+.projects .container .section-header{
+    display: flex;
+    gap: 5px;
 
 }
 
 
 /* =======================================================
-                PROJECT CONTAINER
+PROJECT CONTAINER
 ======================================================= */
 
 .projects-container {
-
+    
     display: flex;
-
+    
     flex-direction: column;
-
+    margin-top: 30px;
+    
     gap: var(--space-80);
-
+    
 }
 
 
