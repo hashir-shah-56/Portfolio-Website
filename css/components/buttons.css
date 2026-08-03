@@ -20,6 +20,8 @@
 
     padding: var(--space-16) var(--space-32);
 
+    min-height: 44px;
+
     border: var(--border-thin);
 
     border-radius: var(--radius-round);

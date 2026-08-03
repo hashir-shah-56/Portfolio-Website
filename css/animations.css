@@ -705,3 +705,19 @@ img.loaded{
     transition:none !important;
 
 }
+
+/* =======================================================
+                MOBILE ANIMATIONS ADJUSTMENT
+======================================================= */
+@media (max-width: 768px) {
+    .reveal.fade-left {
+        transform: translateY(30px);
+    }
+    .reveal.fade-right {
+        transform: translateY(30px);
+    }
+    .reveal.fade-left.active,
+    .reveal.fade-right.active {
+        transform: translateY(0);
+    }
+}

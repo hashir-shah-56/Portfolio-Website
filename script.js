@@ -5,6 +5,8 @@
 
 'use strict';
 
+const MOBILE_BREAKPOINT = 992;
+
 /* =======================================================
                     DOM ELEMENTS
 ======================================================= */
@@ -472,7 +474,7 @@ function animateCounter(counter) {
 
         else {
 
-            counter.textContent = number + "+";
+            counter.textContent = number + " ";
 
         }
 
