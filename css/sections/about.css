@@ -133,6 +133,10 @@ ABOUT CONTENT
 
     margin-top: var(--space-24);
 
+    width: 100%;
+
+    max-width: 500px;
+
 }
 
 .about-item {

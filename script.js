@@ -472,7 +472,7 @@ function animateCounter(counter) {
 
         else {
 
-            counter.textContent = number + "+";
+            counter.textContent = number + " ";
 
         }
 

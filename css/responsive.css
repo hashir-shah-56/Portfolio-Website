@@ -386,6 +386,43 @@
 
     }
 
+    .about-content .about-image{
+        display:none;
+    }
+
+    .experience{
+        display:none;
+    }
+
+    .learning{
+        display:none;
+    }
+
+    .about-content{
+        border: 1px solid var(--color-accent);
+        grid-template-columns: 1fr;
+    }
+
+    .about-info{
+        flex-direction:column;
+        border: 1px solid var(--color-accent);
+        width: 100%;
+    }
+
+    .intro{
+        display:flex;
+        border: 1px solid var(--color-accent);
+    }
+
+    .about-info h4{
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .about-info p{
+        text-align: center;
+    }
+    
     .section-title{
 
         font-size:2rem;
