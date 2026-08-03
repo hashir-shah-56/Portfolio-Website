@@ -366,7 +366,7 @@
                 <= 400px
 ======================================================= */
 
-@media (max-width:400px){
+@media (max-width:576px){
 
     .navbar{
 
@@ -422,7 +422,7 @@
     .about-info p{
         text-align: center;
     }
-    
+
     .section-title{
 
         font-size:2rem;
