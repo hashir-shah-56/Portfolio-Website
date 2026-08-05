@@ -139,10 +139,9 @@
     /* ---------- ABOUT ---------- */
 
     .about-content {
-
-        grid-template-columns: 1fr;
-
-        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
 
     }
 
@@ -154,9 +153,25 @@
 
     }
 
-    .about-info {
+
+    .about-info .intro {
 
         align-items: center;
+        text-align: justify;
+
+    }
+
+    .about-info .experience {
+
+        align-items: center;
+        text-align: justify;
+
+    }
+
+    .about-info .learning {
+
+        align-items: center;
+        text-align: justify;
 
     }
 
@@ -346,6 +361,39 @@
 
     }
 
+
+
+    .about-info {
+        /*display: flex;
+        flex-direction: column;
+        align-items: center;*/
+        /*border: 1px solid rgb(21, 173, 1);*/
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+    
+    .about-info p {
+        width: 100%;
+        overflow-wrap: break-word;
+        word-break: normal;
+    }
+    
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        /*border: 1px solid rgb(177, 189, 175);*/
+    }
+
+    .learning{
+        display: none;
+    }
+
     .project-links {
 
         flex-direction: column;
@@ -392,7 +440,7 @@
     }
 
     .about-content .about-image {
-        display: none;
+       
     }
 
     .experience {
@@ -404,28 +452,29 @@
     }
 
     .about-content {
-        border: 1px solid var(--color-accent);
+        /*border: 1px solid var(--color-accent);*/
         grid-template-columns: 1fr;
     }
 
     .about-info {
         flex-direction: column;
-        border: 1px solid var(--color-accent);
+        /*border: 1px solid var(--color-accent);*/
         width: 100%;
     }
 
     .intro {
         display: flex;
-        border: 1px solid var(--color-accent);
+        /*border: 1px solid var(--color-accent);*/
     }
 
     .about-info h4 {
         font-size: 20px;
-        text-align: center;
+        text-align: justify;
     }
 
     .about-info p {
-        text-align: center;
+        text-align: justify;
+        font-size: 14px;
     }
 
     .section-title {
@@ -464,25 +513,31 @@
         padding-right: 0px;
     }
 
-    .footer-about h3{
+    .footer-about h3 {
         font-size: 25px;
     }
-    .footer-about p{
+
+    .footer-about p {
         font-size: 10px;
     }
-    .footer-links h3{
+
+    .footer-links h3 {
         font-size: 25px;
     }
-    .footer-links a{
+
+    .footer-links a {
         font-size: 10px;
     }
-    .footer-social h3{
+
+    .footer-social h3 {
         font-size: 25px;
     }
-    .social-icons i{
+
+    .social-icons i {
         padding: 10px;
     }
-    .footer-bottom p{
+
+    .footer-bottom p {
         font-size: 10px;
     }
 }
