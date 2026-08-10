@@ -90,13 +90,13 @@
 
         gap: var(--space-24);
 
+        border: 1px solid rgb(68, 68, 68);
+
         border-radius: var(--radius-lg);
 
         background: rgb(15, 15, 15);
 
         backdrop-filter: blur(25px);
-
-        border: var(--border-thin);
 
         opacity: 0;
 
