@@ -67,6 +67,12 @@ ABOUT CONTENT
 
 }
 
+.about-image-2 {
+
+    display: none;
+
+}
+
 .about-image img {
 
     width: 70%;
