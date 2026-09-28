@@ -9,6 +9,8 @@
                     DOM ELEMENTS
 ======================================================= */
 
+const MOBILE_BREAKPOINT = 992;
+
 const navbar = document.querySelector('.navbar');
 
 const navToggle = document.querySelector('.nav-toggle');
@@ -32,6 +34,8 @@ function openMobileMenu() {
 
     navToggle.classList.add('active');
 
+    navToggle.setAttribute('aria-expanded', 'true');
+
     document.body.style.overflow = '';
 
 }
@@ -41,6 +45,8 @@ function closeMobileMenu() {
     navLinksContainer.classList.remove('active');
 
     navToggle.classList.remove('active');
+
+    navToggle.setAttribute('aria-expanded', 'false');
 
     document.body.style.overflow = '';
 
@@ -590,13 +596,13 @@ const roles = [
 
     "Front-End Developer",
 
-    "BS Information Technology Student",
+    "BS IT Student",
 
-    "UI Enthusiast",
+    "E-Commerce Developer",
 
-    "Web Designer",
+    "Responsive Web Designer",
 
-    "Problem Solver"
+    "Open for Opportunities"
 
 ];
 
@@ -1016,5 +1022,97 @@ document.addEventListener("DOMContentLoaded", () => {
         "color:#39ff14;font-size:16px;font-weight:bold;"
 
     );
+
+});
+
+
+
+/* =======================================================
+            CASE STUDY MODAL
+======================================================= */
+
+const caseStudyOverlay = document.getElementById('case-study-overlay');
+
+const openCaseStudyBtns = document.querySelectorAll('.js-open-case-study');
+
+const closeCaseStudyBtns = document.querySelectorAll('.js-close-case-study');
+
+let lastActiveElement = null;
+
+function openCaseStudy() {
+
+    if (!caseStudyOverlay) return;
+
+    lastActiveElement = document.activeElement;
+
+    caseStudyOverlay.classList.add('active');
+
+    caseStudyOverlay.removeAttribute('aria-hidden');
+
+    document.body.style.overflow = 'hidden';
+
+    // Move focus to the modal
+    const firstFocusable = caseStudyOverlay.querySelector(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+
+    if (firstFocusable) firstFocusable.focus();
+
+}
+
+function closeCaseStudy() {
+
+    if (!caseStudyOverlay) return;
+
+    caseStudyOverlay.classList.remove('active');
+
+    caseStudyOverlay.setAttribute('aria-hidden', 'true');
+
+    document.body.style.overflow = '';
+
+    if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
+
+        lastActiveElement.focus();
+
+    }
+
+}
+
+openCaseStudyBtns.forEach(btn => {
+
+    btn.addEventListener('click', openCaseStudy);
+
+});
+
+closeCaseStudyBtns.forEach(btn => {
+
+    btn.addEventListener('click', closeCaseStudy);
+
+});
+
+// Close on overlay click
+if (caseStudyOverlay) {
+
+    caseStudyOverlay.addEventListener('click', (e) => {
+
+        if (e.target === caseStudyOverlay) {
+
+            closeCaseStudy();
+
+        }
+
+    });
+
+}
+
+// Close on Escape key
+document.addEventListener('keydown', (e) => {
+
+    if (e.key === 'Escape' && caseStudyOverlay &&
+        caseStudyOverlay.classList.contains('active')) {
+
+        closeCaseStudy();
+
+    }
 
 });

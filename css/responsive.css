@@ -26,6 +26,12 @@
 
 @media (max-width:1200px) {
 
+    :root {
+
+        --section-pad-y: 40px;
+
+    }
+
     .container {
 
         max-width: 960px;
@@ -60,9 +66,34 @@
 
 @media (max-width:992px) {
 
+
     .container {
 
         max-width: 720px;
+
+    }
+
+    /* ---------- EXPERIENCE ---------- */
+
+    .experience-card-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+    .experience-meta {
+
+        align-items: flex-start;
+
+    }
+
+    /* ---------- EDUCATION ---------- */
+
+    .education-card {
+
+        max-width: 100%;
 
     }
 
@@ -171,6 +202,12 @@
 
     }
 
+    .hero-social {
+
+        justify-content: center;
+
+    }
+
     .hero-stats {
 
         justify-content: center;
@@ -210,14 +247,7 @@
 
     }
 
-    .about-info .experience {
-
-        align-items: center;
-        text-align: justify;
-
-    }
-
-    .about-info .learning {
+    .about-info .experience-blurb {
 
         align-items: center;
         text-align: justify;
@@ -292,17 +322,25 @@
 
 @media (max-width:768px) {
 
+    :root {
+
+        --section-pad-y: 35px;
+
+
+    }
+
     .container {
 
         width: min(92%, 100%);
 
     }
 
-    .section {
+    .nav-center {
 
-        padding: var(--space-80) 0;
+        width: min(88%, 380px);
 
     }
+
 
     .navbar {
 
@@ -365,6 +403,13 @@
 ======================================================= */
 
 @media (max-width:576px) {
+
+    :root {
+
+        --section-pad-y: 30px;
+
+
+    }
 
     .navbar {
 
@@ -439,13 +484,50 @@
         /*border: 1px solid rgb(177, 189, 175);*/
     }
 
-    .learning {
-        display: none;
-    }
 
     .project-links {
 
         flex-direction: column;
+
+    }
+
+    .experience-timeline::before {
+
+        left: 14px;
+
+    }
+
+    .experience-dot {
+
+        left: 5px;
+
+        width: 20px;
+
+        height: 20px;
+
+    }
+
+    .experience-item {
+
+        padding-left: 44px;
+
+    }
+
+    .experience-card {
+
+        padding: var(--space-24);
+
+    }
+
+    .education-card {
+
+        padding: var(--space-24);
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: var(--space-20);
 
     }
 
@@ -488,17 +570,59 @@
 
     }
 
+    .hero-buttons {
+
+        flex-direction: column;
+
+        width: 100%;
+
+    }
+
+    .hero-buttons .btn {
+
+        width: 100%;
+
+    }
+
     .about-content .about-image {
         size: 100%;
         width: 100%;
     }
 
-    .experience {
-        display: none;
+    .experience-item {
+
+        padding-left: 36px;
+
     }
 
-    .learning {
-        display: none;
+    .experience-card {
+
+        padding: var(--space-16);
+
+    }
+
+    .experience-role {
+
+        font-size: var(--fs-lg);
+
+    }
+
+    .education-card {
+
+        padding: var(--space-20);
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: var(--space-16);
+
+    }
+
+    .education-degree {
+
+        font-size: var(--fs-lg);
+
     }
 
     .about-content {

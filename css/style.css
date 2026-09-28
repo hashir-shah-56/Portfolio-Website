@@ -1,23 +1,26 @@
-@import url("/css/base/variable.css");
-@import url("/css/base/reset.css");
-@import url("/css/base/typography.css");
-@import url("/css/layout/layout.css");
+@import url("base/variable.css");
+@import url("base/reset.css");
+@import url("base/typography.css");
+@import url("layout/layout.css");
 
-@import url("/css/components/buttons.css");
-@import url("/css/components/cards.css");
-@import url("/css/components/forms.css");
+@import url("components/buttons.css");
+@import url("components/cards.css");
+@import url("components/forms.css");
+@import url("components/case-study.css");
 
-@import url("/css/layout/navbar.css");
-@import url("/css/sections/hero.css");
-@import url("/css/sections/about.css");
-@import url("/css/sections/skills.css");
-@import url("/css/sections/projects.css");
-@import url("/css/sections/services.css");
-@import url("/css/sections/contact.css");
-@import url("/css/layout/footer.css");
+@import url("layout/navbar.css");
+@import url("sections/hero.css");
+@import url("sections/about.css");
+@import url("sections/experience.css");
+@import url("sections/skills.css");
+@import url("sections/projects.css");
+@import url("sections/services.css");
+@import url("sections/education.css");
+@import url("sections/contact.css");
+@import url("layout/footer.css");
 
-@import url("/css/animations.css");
-@import url("/css/responsive.css");
+@import url("animations.css");
+@import url("responsive.css");
 
 /* =======================================================
                     ROOT PAGE
@@ -97,14 +100,25 @@ body{
 
 
 /* =======================================================
-                DEFAULT SECTION
+                SECTION SPACING SYSTEM
 ======================================================= */
 
-.section{
+.section,
+section:not(.hero) {
 
-    padding: var(--space-120) 0;
+    padding-top: var(--section-pad-y);
+
+    padding-bottom: var(--section-pad-y);
 
     position: relative;
+
+}
+
+/* Adjacent sections each contribute half of the visual separation.
+   Keep the hero's existing top clearance for the fixed navigation. */
+main > .hero {
+
+    padding-bottom: var(--section-pad-y);
 
 }
 

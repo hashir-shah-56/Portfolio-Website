@@ -1,0 +1,346 @@
+/* =======================================================
+                    EDUCATION.CSS
+======================================================= */
+
+
+/* =======================================================
+            EDUCATION SECTION
+======================================================= */
+
+.education {
+
+    position: relative;
+
+    
+}
+
+.education .container {
+
+    position: relative;
+
+    display: flex;
+    
+    flex-direction: column;
+    
+    align-items: center;
+    
+    gap: 20px;
+}
+
+.education .section-header {
+
+    margin-bottom: var(--space-48);
+
+}
+
+
+/* =======================================================
+            EDUCATION CARD
+======================================================= */
+
+.education-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--space-32);
+
+    width: 100%;
+
+    max-width: 640px;
+
+    padding: var(--space-40);
+
+    border: var(--border-thin);
+
+    border-radius: var(--radius-xl);
+
+    background: var(--glass-bg);
+
+    backdrop-filter: blur(var(--glass-blur));
+
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+
+    transition:
+        transform var(--transition-normal),
+        border-color var(--transition-normal),
+        box-shadow var(--transition-normal);
+
+}
+
+.education-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color: var(--color-accent);
+
+    box-shadow: var(--glow-md);
+
+}
+
+
+/* =======================================================
+            EDUCATION ICON
+======================================================= */
+
+.education-icon {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    width: 64px;
+
+    height: 64px;
+
+    border-radius: var(--radius-md);
+
+    background: rgba(133, 238, 0, 0.08);
+
+    color: var(--color-accent);
+
+    font-size: 1.8rem;
+
+    flex-shrink: 0;
+
+}
+
+
+/* =======================================================
+            EDUCATION INFO
+======================================================= */
+
+.education-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-8);
+
+}
+
+.education-degree {
+
+    font-family: var(--font-heading);
+
+    font-size: var(--fs-xl);
+
+    font-weight: var(--fw-bold);
+
+    color: var(--color-text-primary);
+
+}
+
+.education-institution {
+
+    color: var(--color-accent);
+
+    font-weight: var(--fw-semibold);
+
+    font-size: var(--fs-md);
+
+}
+
+.education-status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 4px 14px;
+
+    border-radius: var(--radius-round);
+
+    border: var(--border-thin);
+
+    background: rgba(133, 238, 0, 0.06);
+
+    color: var(--color-accent);
+
+    font-size: var(--fs-sm);
+
+    font-weight: var(--fw-medium);
+
+    width: fit-content;
+
+}
+
+
+/* =======================================================
+            HERO SOCIAL LINKS
+======================================================= */
+
+.hero-social {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--space-16);
+
+    margin-top: var(--space-8);
+
+}
+
+.hero-social a {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    border: var(--border-thin);
+
+    background: var(--glass-bg);
+
+    color: var(--color-text-secondary);
+
+    font-size: 1.1rem;
+
+    transition:
+        border-color var(--transition-fast),
+        color var(--transition-fast),
+        background var(--transition-fast),
+        box-shadow var(--transition-fast);
+
+}
+
+.hero-social a:hover {
+
+    border-color: var(--color-accent);
+
+    color: var(--color-accent);
+
+    background: rgba(133, 238, 0, 0.06);
+
+    box-shadow: var(--glow-sm);
+
+}
+
+
+/* =======================================================
+            PROJECT TECH SMALL (tech stack row on cards)
+======================================================= */
+
+.project-tech-small {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: var(--space-8);
+
+    margin-top: -var(--space-8);
+
+}
+
+.project-tech-small span {
+
+    padding: 4px 10px;
+
+    border-radius: var(--radius-round);
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: var(--border-thin);
+
+    color: var(--color-text-muted);
+
+    font-size: var(--fs-xs);
+
+    font-weight: var(--fw-medium);
+
+}
+
+
+/* =======================================================
+            PROJECT IMAGE PLACEHOLDER
+======================================================= */
+
+.project-image--placeholder {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 280px;
+
+    border-radius: var(--radius-lg);
+
+    border: 2px dashed var(--color-border-light);
+
+    background: var(--color-bg-tertiary);
+
+}
+
+.project-placeholder {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: var(--space-16);
+
+    color: var(--color-text-muted);
+
+}
+
+.project-placeholder i {
+
+    font-size: 3rem;
+
+    color: var(--color-accent);
+
+    opacity: 0.5;
+
+}
+
+.project-placeholder span {
+
+    font-size: var(--fs-sm);
+
+    font-weight: var(--fw-medium);
+
+    text-align: center;
+
+}
+
+
+/* =======================================================
+        BTN GHOST (tertiary/outline-only variant)
+======================================================= */
+
+.btn-ghost {
+
+    background: transparent;
+
+    border: var(--border-thin);
+
+    color: var(--color-text-secondary);
+
+    cursor: pointer;
+
+}
+
+.btn-ghost:hover {
+
+    border-color: var(--color-accent);
+
+    color: var(--color-accent);
+
+}

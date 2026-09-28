@@ -12,11 +12,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="Hashir Shah - Aspiring Front-End Developer creating modern, responsive and interactive websites using HTML, CSS and JavaScript.">
+        content="Syed Hashir Abrar Shah — Front-End Developer & BS IT Student. I build responsive, user-focused web experiences with modern frontend technologies, combining clean UI/UX with practical backend integrations.">
 
-    <meta name="keywords" content="Hashir Shah, Portfolio, Front-End Developer, HTML, CSS, JavaScript, Web Developer">
+    <meta name="keywords"
+        content="Hashir Shah, Portfolio, Front-End Developer, HTML, CSS, JavaScript, Supabase, PHP, MySQL, Web Developer, Pakistan">
 
-    <meta name="author" content="Hashir Shah">
+    <meta name="author" content="Syed Hashir Abrar Shah">
 
     <meta name="robots" content="index, follow">
 
@@ -24,25 +25,27 @@
                 OPEN GRAPH
     =========================================== -->
 
-    <meta property="og:title" content="Hashir Shah | Portfolio">
+    <meta property="og:title" content="Syed Hashir Abrar Shah | Front-End Developer">
 
-    <meta property="og:description" content="Front-End Developer Portfolio">
+    <meta property="og:description"
+        content="Front-End Developer & BS IT Student building responsive, user-focused web experiences.">
 
     <meta property="og:type" content="website">
 
-    <meta property="og:image" content="images/preview.png">
+    <meta property="og:image" content="Images/Profile 2.png">
 
     <!-- ==========================================
                     TITLE
     =========================================== -->
 
-    <title>Hashir Shah | Front-End Developer</title>
+    <title>Syed Hashir Abrar Shah | Front-End Developer</title>
 
     <!-- ==========================================
                     FAVICON
     =========================================== -->
 
-    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23050505'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='900' font-size='56' fill='%2385ee00'>HS</text></svg>">
 
     <!-- ==========================================
                 GOOGLE FONTS
@@ -74,7 +77,7 @@
 
 
 
-    <div class="scroll-progress"></div>
+    <div class="scroll-progress" aria-hidden="true"></div>
 
     <!-- =====================================================
                         HEADER
@@ -82,7 +85,7 @@
 
     <header>
 
-        <nav class="navbar glass">
+        <nav class="navbar glass" aria-label="Main navigation">
 
             <div class="container">
 
@@ -92,7 +95,7 @@
 
                     <div class="nav-left">
 
-                        <i class="fa-solid fa-location-dot"></i>
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
 
                         <span>Rawalpindi, Pakistan</span>
 
@@ -100,70 +103,41 @@
 
                     <!-- CENTER -->
 
-                    <div class="nav-center">
+                    <div class="nav-center" id="nav-menu" role="navigation">
 
                         <ul class="nav-links">
 
                             <li>
-
-                                <a href="#home" class="active">
-
-                                    Home
-
-                                </a>
-
+                                <a href="#home" class="active">Home</a>
                             </li>
 
                             <li>
-
-                                <a href="#about">
-
-                                    About
-
-                                </a>
-
+                                <a href="#about">About</a>
                             </li>
 
                             <li>
-
-                                <a href="#skills">
-
-                                    Skills
-
-                                </a>
-
+                                <a href="#experience">Experience</a>
                             </li>
 
                             <li>
-
-                                <a href="#projects">
-
-                                    Projects
-
-                                </a>
-
+                                <a href="#skills">Skills</a>
                             </li>
 
                             <li>
-
-                                <a href="#services">
-
-                                    Services
-
-                                </a>
-
+                                <a href="#projects">Projects</a>
                             </li>
 
                             <li>
-
-                                <a href="#contact">
-
-                                    Contact
-
-                                </a>
-
+                                <a href="#services">Services</a>
                             </li>
 
+                            <li>
+                                <a href="#education">Education</a>
+                            </li>
+
+                            <li>
+                                <a href="#contact">Contact</a>
+                            </li>
                         </ul>
 
                     </div>
@@ -173,14 +147,15 @@
                     <div class="nav-right">
 
                         <a href="Images/Syed-Hashir-Abrar-Shah-Resume.docx"
-                            download="Syed-Hashir-Abrar-Shah-Resume.docx" class="btn btn-secondary">
+                            download="Syed-Hashir-Abrar-Shah-Resume.docx" class="btn btn-secondary"
+                            aria-label="Download Resume">
                             Resume
-
                         </a>
 
-                        <button class="nav-toggle" aria-label="Open Navigation">
+                        <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false"
+                            aria-controls="nav-menu">
 
-                            <i class="fa-solid fa-bars"></i>
+                            <i class="fa-solid fa-bars" aria-hidden="true"></i>
 
                         </button>
 
@@ -204,7 +179,7 @@
                         HERO
 ====================================================== -->
 
-        <section class="hero" id="home">
+        <section class="hero" id="home" aria-label="Introduction">
 
             <div class="container">
 
@@ -215,98 +190,57 @@
                     <div class="hero-left reveal fade-left">
 
                         <p class="hero-greeting">
-
                             Hello, I'm
-
                         </p>
 
                         <h1 class="hero-title">
-
                             Hashir <span>Shah</span>
-
                         </h1>
 
                         <h2 class="hero-subtitle">
-
-                            Aspiring Front-End Developer
-
+                            Front-End Developer
                         </h2>
 
                         <p class="hero-description">
-
-                            I design and develop modern, responsive, and user-focused websites with clean code and
-                            attention to detail. My goal is to create fast, visually engaging digital experiences that
-                            leave a lasting impression.
-
+                            I build responsive, user-focused web experiences with modern
+                            frontend technologies, combining clean UI/UX with practical
+                            backend integrations.
                         </p>
 
                         <div class="hero-buttons">
 
-                            <a href="Images/Syed-Hashir-Abrar-Shah-Resume.docx"
-                                download="Syed-Hashir-Abrar-Shah-Resume.docx" class="btn btn-secondary">
-
-                                Download CV
-
-                            </a>
-
-
                             <a href="#projects" class="btn btn-primary">
-
                                 View Projects
-
                             </a>
 
+                            <a href="#contact" class="btn btn-secondary">
+                                Contact Me
+                            </a>
+
+                            <a href="Images/Syed-Hashir-Abrar-Shah-Resume.docx"
+                                download="Syed-Hashir-Abrar-Shah-Resume.docx" class="btn btn-secondary"
+                                aria-label="Download Resume">
+                                <i class="fa-solid fa-download" aria-hidden="true"></i>
+                                Resume
+                            </a>
 
                         </div>
 
-                        <div class="hero-stats">
+                        <div class="hero-stats" aria-label="Quick stats">
 
                             <div class="hero-stat">
-
-                                <h3>
-
-                                    1
-
-                                </h3>
-
-                                <p>
-
-                                    Project
-
-                                </p>
-
+                                <h3>2</h3>
+                                <p>Projects</p>
                             </div>
 
                             <div class="hero-stat">
-
-                                <h3>
-
-                                    4+
-
-                                </h3>
-
-                                <p>
-
-                                    Technologies
-
-                                </p>
-
+                                <h3>9+</h3>
+                                <p>Technologies</p>
                             </div>
 
                             <div class="hero-stat">
-
-                                <h3>
-
-                                    Open
-
-                                </h3>
-
-                                <p>
-
-                                    For Work
-
-                                </p>
-
+                                <h3>Open</h3>
+                                <p>For Work</p>
                             </div>
 
                         </div>
@@ -319,7 +253,8 @@
 
                         <div class="hero-image">
 
-                            <img src="/Images/Profile 2.png" alt="Hashir Shah">
+                            <img src="Images/Profile 2.png" alt="Syed Hashir Abrar Shah — Front-End Developer"
+                                loading="eager">
 
                         </div>
 
@@ -331,13 +266,9 @@
 
             <!-- Scroll -->
 
-            <div class="scroll-indicator scroll-bounce">
+            <div class="scroll-indicator scroll-bounce" aria-hidden="true">
 
-                <span>
-
-                    Scroll Down
-
-                </span>
+                <span>Scroll Down</span>
 
                 <i class="fa-solid fa-arrow-down"></i>
 
@@ -353,7 +284,7 @@
                         ABOUT
 ====================================================== -->
 
-    <section class="about">
+    <section class="about" id="about" aria-label="About me">
 
         <div class="container">
 
@@ -371,79 +302,52 @@
 
                 <div class="about-image reveal fade-left">
 
-                    <img src="images/Image.jpg" alt="Hashir Shah" class="img-fluid rounded">
-
-                    <!--<video autoplay muted loop playsinline class="img-fluid rounded">
-                        
-                        <source src="images/Video_3.mp4" type="video/mp4">
-                        
-                    </video>-->
+                    <img src="Images/Image.jpg" alt="Hashir Shah working on a project" class="img-fluid rounded"
+                        loading="lazy">
 
                 </div>
-                <!--<div class="about-image-2 reveal fade-left">
-                    <img src="images/Image-2.png" alt="Hashir Shah" class="img-fluid rounded">
-
-                </div>-->
 
                 <!-- Content -->
 
                 <div class="about-info">
 
                     <h5>
-                        Aspiring Front-End Developer
+                        Front-End Developer &amp; BS IT Student
                     </h5>
 
                     <div class="intro">
 
                         <p>
-
-                            I'm Hashir Shah, currently pursuing a Bachelor's degree in
-                            Information Technology. My primary interest is Front-End
-                            Development, where I enjoy transforming ideas into modern,
-                            responsive, and interactive websites.
-
+                            I'm a BS Information Technology student and Front-End Developer focused on building
+                            responsive,
+                            intuitive, and visually polished web experiences. I've worked on e-commerce, business, and
+                            portfolio websites using HTML, CSS, JavaScript, PHP, MySQL, and Supabase.
                         </p>
+
                     </div>
 
-                    <div class="experience ">
+                    <div class="experience-blurb">
 
                         <p>
-
-                            I have experience building projects using HTML, CSS,
-                            JavaScript, PHP, and MySQL. I focus on writing clean,
-                            maintainable code while creating interfaces that provide an
-                            excellent user experience.
-
+                            Alongside development, my IT internship at SYSCOM gave me professional exposure to data
+                            analysis,
+                            dashboard reporting, Jira, Looker, and Tableau. I enjoy turning real requirements into
+                            functional
+                            digital products while continuously expanding my development skills.
                         </p>
-                    </div>
 
-                    <div class="learning">
-
-                        <p>
-
-                            I'm continuously learning new technologies and improving my
-                            problem-solving skills to become a professional Full-Stack
-                            Developer in the future.
-
-                        </p>
                     </div>
 
                     <div class="about-buttons">
 
-                        <a href="https://wa.me/923209798572?text=Hi%20Hashir,%0A%0AI%20visited%20your%20portfolio%20and%20I'm%20interested%20in%20discussing%20a%20website%20project%20with%20you."
-                            target="_blank" class="btn btn-primary">
-
+                        <a href="#contact" class="btn btn-primary">
                             Let's Talk
-
                         </a>
 
-                        <!--
-                            <a href="resume.pdf" class="btn btn-secondary">
-                                
-                                Download Resume
-                                
-                            </a>
-                        -->
+                        <a href="Images/Syed-Hashir-Abrar-Shah-Resume.docx"
+                            download="Syed-Hashir-Abrar-Shah-Resume.docx" class="btn btn-secondary">
+                            Download CV
+                        </a>
 
                     </div>
 
@@ -451,9 +355,91 @@
 
             </div>
 
-            <!-- Statistics -->
+        </div>
+
+    </section>
 
 
+
+    <!-- =====================================================
+                    EXPERIENCE
+====================================================== -->
+
+    <section class="experience" id="experience" aria-label="Professional experience">
+
+        <div class="container">
+
+            <div class="header">
+
+                <h2 class="title">Experience</h2>
+
+                <p class="description">
+                    Professional exposure gained through real-world internship work.
+                </p>
+
+            </div>
+
+            <div class="experience-timeline reveal fade-up">
+
+                <div class="experience-item">
+
+                    <div class="experience-dot" aria-hidden="true"></div>
+
+                    <div class="experience-card">
+
+                        <div class="experience-card-header">
+
+                            <div>
+                                <p class="experience-role">IT Intern</p>
+                                <p class="experience-company">SYSCOM</p>
+                            </div>
+
+                            <div class="experience-meta">
+
+                                <span class="experience-period">
+                                    <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                                    <!-- TODO: Add your exact internship dates here, e.g. "Jun 2026 – Aug 2026" -->
+                                    2026
+                                </span>
+
+                                <span class="experience-location">
+                                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                                    Islamabad, Pakistan
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <ul class="experience-list">
+
+                            <li>Worked with operational and incident datasets for analysis and reporting.</li>
+
+                            <li>Created dashboards and reports using Looker and Tableau.</li>
+
+                            <li>Analyzed P1/P2 incidents, monthly trends, recurring incidents, domains, priorities,
+                                alert sources, countries, and internal/external classifications.</li>
+
+                            <li>Used Jira and Microsoft Teams for task coordination and professional communication.</li>
+
+                            <li>Gained practical exposure to an IT/telecommunications working environment.</li>
+
+                        </ul>
+
+                        <div class="experience-tools" aria-label="Tools used">
+
+                            <span class="experience-tool">Looker</span>
+                            <span class="experience-tool">Microsoft Teams</span>
+                            <span class="experience-tool">Data Analysis</span>
+                            <span class="experience-tool">Dashboard Reporting</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
@@ -465,7 +451,7 @@
                         SKILLS
 ====================================================== -->
 
-    <section class="skills" id="skills">
+    <section class="skills" id="skills" aria-label="Skills">
 
         <div class="container">
 
@@ -476,10 +462,8 @@
                 </h2>
 
                 <p class="description">
-
-                    These are the skills I currently use to build responsive,
-                    modern, and scalable web applications.
-
+                    Technologies and tools I work with across frontend development, backend integration, and
+                    professional tooling.
                 </p>
 
             </div>
@@ -490,47 +474,32 @@
 
                 <!-- =======================================
                     FRONTEND
-            ======================================== -->
+                ======================================== -->
 
                 <div class="skill-category reveal fade-up">
 
                     <h3 class="skill-category-title">
-
                         Front-End
-
                     </h3>
 
                     <div class="skill-list">
 
                         <div class="skill-item">
 
-                            <div class="skill-icon">
-
+                            <div class="skill-icon" aria-hidden="true">
                                 <i class="fa-brands fa-html5"></i>
-
                             </div>
 
                             <div class="skill-info">
 
-                                <span class="skill-name">
+                                <span class="skill-name">HTML5</span>
 
-                                    HTML5
-
-                                </span>
-
-                                <div class="skill-bar">
-
-                                    <div class="skill-progress" style="width:95%;">
-
-                                    </div>
-
+                                <div class="skill-bar" role="progressbar" aria-label="HTML5 proficiency"
+                                    aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="skill-progress" style="width:95%;"></div>
                                 </div>
 
-                                <span class="skill-percent">
-
-                                    Advanced
-
-                                </span>
+                                <span class="skill-percent">Advanced</span>
 
                             </div>
 
@@ -540,33 +509,20 @@
 
                         <div class="skill-item">
 
-                            <div class="skill-icon">
-
+                            <div class="skill-icon" aria-hidden="true">
                                 <i class="fa-brands fa-css3-alt"></i>
-
                             </div>
 
                             <div class="skill-info">
 
-                                <span class="skill-name">
+                                <span class="skill-name">CSS3</span>
 
-                                    CSS3
-
-                                </span>
-
-                                <div class="skill-bar">
-
-                                    <div class="skill-progress" style="width:90%;">
-
-                                    </div>
-
+                                <div class="skill-bar" role="progressbar" aria-label="CSS3 proficiency"
+                                    aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="skill-progress" style="width:90%;"></div>
                                 </div>
 
-                                <span class="skill-percent">
-
-                                    Advanced
-
-                                </span>
+                                <span class="skill-percent">Advanced</span>
 
                             </div>
 
@@ -576,33 +532,41 @@
 
                         <div class="skill-item">
 
-                            <div class="skill-icon">
-
+                            <div class="skill-icon" aria-hidden="true">
                                 <i class="fa-brands fa-js"></i>
-
                             </div>
 
                             <div class="skill-info">
 
-                                <span class="skill-name">
+                                <span class="skill-name">JavaScript</span>
 
-                                    JavaScript
-
-                                </span>
-
-                                <div class="skill-bar">
-
-                                    <div class="skill-progress" style="width:82%;">
-
-                                    </div>
-
+                                <div class="skill-bar" role="progressbar" aria-label="JavaScript proficiency"
+                                    aria-valuenow="78" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="skill-progress" style="width:78%;"></div>
                                 </div>
 
-                                <span class="skill-percent">
+                                <span class="skill-percent">Intermediate</span>
 
-                                    Intermediate
+                            </div>
 
-                                </span>
+                        </div>
+
+                        <div class="skill-item">
+
+                            <div class="skill-icon" aria-hidden="true">
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+                            </div>
+
+                            <div class="skill-info">
+
+                                <span class="skill-name">Responsive Web Design</span>
+
+                                <div class="skill-bar" role="progressbar" aria-label="Responsive Web Design proficiency"
+                                    aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="skill-progress" style="width:88%;"></div>
+                                </div>
+
+                                <span class="skill-percent">Advanced</span>
 
                             </div>
 
@@ -615,48 +579,33 @@
 
 
                 <!-- =======================================
-                    BACKEND
-            ======================================== -->
+                    BACKEND / DATABASE
+                ======================================== -->
 
                 <div class="skill-category reveal fade-up delay-1">
 
                     <h3 class="skill-category-title">
-
-                        Backend
-
+                        Backend / Database
                     </h3>
 
                     <div class="skill-list">
 
                         <div class="skill-item">
 
-                            <div class="skill-icon">
-
+                            <div class="skill-icon" aria-hidden="true">
                                 <i class="fa-brands fa-php"></i>
-
                             </div>
 
                             <div class="skill-info">
 
-                                <span class="skill-name">
+                                <span class="skill-name">PHP</span>
 
-                                    PHP
-
-                                </span>
-
-                                <div class="skill-bar">
-
-                                    <div class="skill-progress" style="width:70%;">
-
-                                    </div>
-
+                                <div class="skill-bar" role="progressbar" aria-label="PHP proficiency"
+                                    aria-valuenow="68" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="skill-progress" style="width:68%;"></div>
                                 </div>
 
-                                <span class="skill-percent">
-
-                                    Intermediate
-
-                                </span>
+                                <span class="skill-percent">Intermediate</span>
 
                             </div>
 
@@ -666,33 +615,62 @@
 
                         <div class="skill-item">
 
-                            <div class="skill-icon">
-
+                            <div class="skill-icon" aria-hidden="true">
                                 <i class="fa-solid fa-database"></i>
-
                             </div>
 
                             <div class="skill-info">
 
-                                <span class="skill-name">
+                                <span class="skill-name">MySQL</span>
 
-                                    MySQL
-
-                                </span>
-
-                                <div class="skill-bar">
-
-                                    <div class="skill-progress" style="width:72%;">
-
-                                    </div>
-
+                                <div class="skill-bar" role="progressbar" aria-label="MySQL proficiency"
+                                    aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="skill-progress" style="width:70%;"></div>
                                 </div>
 
-                                <span class="skill-percent">
+                                <span class="skill-percent">Intermediate</span>
 
-                                    Intermediate
+                            </div>
 
-                                </span>
+                        </div>
+
+                        <div class="skill-item">
+
+                            <div class="skill-icon" aria-hidden="true">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+
+                            <div class="skill-info">
+
+                                <span class="skill-name">Supabase</span>
+
+                                <div class="skill-bar" role="progressbar" aria-label="Supabase proficiency"
+                                    aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="skill-progress" style="width:72%;"></div>
+                                </div>
+
+                                <span class="skill-percent">Intermediate</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="skill-item">
+
+                            <div class="skill-icon" aria-hidden="true">
+                                <i class="fa-solid fa-plug"></i>
+                            </div>
+
+                            <div class="skill-info">
+
+                                <span class="skill-name">REST API Integration</span>
+
+                                <div class="skill-bar" role="progressbar" aria-label="REST API proficiency"
+                                    aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="skill-progress" style="width:65%;"></div>
+                                </div>
+
+                                <span class="skill-percent">Intermediate</span>
 
                             </div>
 
@@ -705,36 +683,33 @@
 
 
                 <!-- =======================================
-                    TOOLS
-            ======================================== -->
+                    TOOLS & DEPLOYMENT
+                ======================================== -->
 
                 <div class="skill-category reveal fade-up delay-2">
 
                     <h3 class="skill-category-title">
-
-                        Tools
-
+                        Tools &amp; Deployment
                     </h3>
 
                     <div class="skill-list">
 
                         <div class="skill-item">
 
-                            <div class="skill-icon">
-
+                            <div class="skill-icon" aria-hidden="true">
                                 <i class="fa-brands fa-git-alt"></i>
-
                             </div>
 
                             <div class="skill-info">
+                                <span class="skill-name">Git</span>
+                                <div class="skill-bar" role="progressbar" aria-label="GIT" aria-valuenow="65"
+                                    aria-valuemin="0" aria-valuemax="100">
+                                    <div class="skill-progress" style="width:65%;"></div>
+                                </div>
 
-                                <span class="skill-name">
-
-                                    Git
-
-                                </span>
-
+                                <span class="skill-percent">Intermediate</span>
                             </div>
+
 
                         </div>
 
@@ -742,20 +717,19 @@
 
                         <div class="skill-item">
 
-                            <div class="skill-icon">
-
+                            <div class="skill-icon" aria-hidden="true">
                                 <i class="fa-brands fa-github"></i>
-
                             </div>
 
                             <div class="skill-info">
+                                <span class="skill-name">GitHub</span>
 
-                                <span class="skill-name">
+                                <div class="skill-bar" role="progressbar" aria-label="GitHub" aria-valuenow="65"
+                                    aria-valuemin="0" aria-valuemax="100">
+                                    <div class="skill-progress" style="width:65%;"></div>
+                                </div>
 
-                                    GitHub
-
-                                </span>
-
+                                <span class="skill-percent">Intermediate</span>
                             </div>
 
                         </div>
@@ -764,20 +738,38 @@
 
                         <div class="skill-item">
 
-                            <div class="skill-icon">
-
+                            <div class="skill-icon" aria-hidden="true">
                                 <i class="fa-solid fa-code"></i>
-
                             </div>
 
                             <div class="skill-info">
+                                <span class="skill-name">Visual Studio Code</span>
 
-                                <span class="skill-name">
+                                <div class="skill-bar" role="progressbar" aria-label="Visual Studio Code"
+                                    aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="skill-progress" style="width:65%;"></div>
+                                </div>
 
-                                    Visual Studio Code
+                                <span class="skill-percent">Intermediate</span>
+                            </div>
 
-                                </span>
+                        </div>
 
+                        <div class="skill-item">
+
+                            <div class="skill-icon" aria-hidden="true">
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                            </div>
+
+                            <div class="skill-info">
+                                <span class="skill-name">Netlify</span>
+
+                                <div class="skill-bar" role="progressbar" aria-label="Netlify" aria-valuenow="65"
+                                    aria-valuemin="0" aria-valuemax="100">
+                                    <div class="skill-progress" style="width:65%;"></div>
+                                </div>
+
+                                <span class="skill-percent">Intermediate</span>
                             </div>
 
                         </div>
@@ -788,61 +780,7 @@
 
             </div>
 
-
-
-            <!-- =======================================
-                CURRENTLY LEARNING
-        ======================================== -->
-
-            <!--    <div class="learning-section">
-
-                <div class="section-header">
-
-                    <h3>
-
-                        Currently Learning
-
-                    </h3>
-
-                </div>
-
-                <div class="learning-grid">
-
-                    <span class="learning-item">
-
-                        React.js
-
-                    </span>
-
-                    <span class="learning-item">
-
-                        Node.js
-
-                    </span>
-
-                    <span class="learning-item">
-
-                        TypeScript
-
-                    </span>
-
-                    <span class="learning-item">
-
-                        REST APIs
-
-                    </span>
-
-                    <span class="learning-item">
-
-                        UI / UX Principles
-
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div> -->
+        </div>
 
     </section>
 
@@ -852,22 +790,18 @@
                         PROJECTS
 ====================================================== -->
 
-    <section class="projects" id="projects">
+    <section class="projects" id="projects" aria-label="Projects">
 
         <div class="container">
 
             <div class="section-header">
-
-                <!--<p class="section-subtitle">
-                    Featured Work
-                </p> -->
 
                 <h2 class="section-title">
                     Projects
                 </h2>
 
                 <p class="section-description">
-                    A selection of project that demonstrate my ability to design and
+                    A selection of projects demonstrating my ability to design and
                     develop responsive, modern, and user-focused web applications.
                 </p>
 
@@ -876,62 +810,125 @@
             <div class="projects-container">
 
                 <!-- ==========================================
-                        PROJECT 1
-            =========================================== -->
+                        PROJECT 1 — SHAH EMBROIDERY & ART (FLAGSHIP)
+                =========================================== -->
 
-                <article class="project-card reveal fade-up">
+                <article class="project-card reveal fade-up" aria-label="Shah Embroidery and Art project">
 
                     <div class="project-image">
 
-                        <span class="project-badge">
-                            Featured
-                        </span>
+                        <span class="project-badge">Featured</span>
 
-                        <img src="images/Project.png" alt="ScentAura Website">
+                        <img src="Images/Project_2.png" alt="Shah Embroidery and Art — e-commerce platform screenshot"
+                            loading="lazy">
 
                     </div>
 
                     <div class="project-content">
 
-                        <p class="project-number">
-                            Project 01
+                        <p class="project-number">Project 01</p>
+
+                        <h3 class="project-title">
+                            Shah Embroidery &amp; Art
+                        </h3>
+
+                        <p class="project-description">
+                            A responsive e-commerce platform for a handmade embroidery and artwork business,
+                            featuring a dynamic product catalog, search, customer accounts, cart, wishlist,
+                            custom-order functionality, checkout, Supabase integration, and an owner-only
+                            admin dashboard.
                         </p>
+
+                        <div class="project-tags">
+                            <span class="project-tag">E-Commerce</span>
+                            <span class="project-tag">Supabase</span>
+                            <span class="project-tag">Authentication</span>
+                            <span class="project-tag">Admin Dashboard</span>
+                            <span class="project-tag">Responsive Design</span>
+                        </div>
+
+                        <div class="project-tech-small">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>Supabase</span>
+                            <span>Git / GitHub</span>
+                            <span>Netlify</span>
+                        </div>
+
+                        <div class="project-links">
+
+                            <a href="https://shah-embroidery-and-art.netlify.app/" target="_blank"
+                                rel="noopener noreferrer" class="btn btn-primary"
+                                aria-label="View live demo of Shah Embroidery and Art">
+                                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                                Live Demo
+                            </a>
+
+                            <a href="https://github.com/hashir-shah-56/Shah-Embroidery-and-Art" target="_blank"
+                                rel="noopener noreferrer" class="btn btn-secondary"
+                                aria-label="View Shah Embroidery and Art source code on GitHub">
+                                <i class="fa-brands fa-github" aria-hidden="true"></i>
+                                GitHub
+                            </a>
+
+                            <button class="btn btn-ghost js-open-case-study" data-project="shah-embroidery"
+                                aria-label="View case study for Shah Embroidery and Art" aria-haspopup="dialog">
+                                Case Study
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- ==========================================
+                        PROJECT 2 — SCENTAURA
+                =========================================== -->
+
+                <article class="project-card reverse reveal fade-up delay-1" aria-label="ScentAura project">
+
+                    <div class="project-image">
+
+                        <img src="Images/Project.png" alt="ScentAura — premium perfume e-commerce website screenshot"
+                            loading="lazy">
+
+                    </div>
+
+                    <div class="project-content">
+
+                        <p class="project-number">Project 02</p>
 
                         <h3 class="project-title">
                             ScentAura
                         </h3>
 
                         <p class="project-description">
-
                             A premium perfume e-commerce website featuring a modern UI,
                             responsive layouts, product search, shopping cart,
                             smooth animations, and an elegant shopping experience.
-
                         </p>
 
                         <div class="project-tags">
-
-                            <span class="project-tag">HTML5</span>
-                            <span class="project-tag">CSS3</span>
+                            <span class="project-tag">E-Commerce</span>
+                            <span class="project-tag">Responsive Design</span>
                             <span class="project-tag">JavaScript</span>
-                            <span class="project-tag">Responsive</span>
+                        </div>
 
+                        <div class="project-tech-small">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
                         </div>
 
                         <div class="project-links">
-                            <!-- 
-                                <a href="#" class="btn btn-primary">
-                                    
-                                    Live Demo
-                                    
-                                </a>
-                            -->
 
                             <a href="https://github.com/hashir-shah-56/ScentAura" target="_blank"
-                                class="btn btn-secondary">
-
+                                rel="noopener noreferrer" class="btn btn-secondary"
+                                aria-label="View ScentAura source code on GitHub">
+                                <i class="fa-brands fa-github" aria-hidden="true"></i>
                                 GitHub
-
                             </a>
 
                         </div>
@@ -939,134 +936,6 @@
                     </div>
 
                 </article>
-
-                <!-- ==========================================
-                    PROJECT 2
-                    =========================================== 
-                    
-                    <article class="project-card reverse reveal fade-up delay-1">
-                        
-                        <div class="project-image">
-                            
-                            <img src="images/projects/portfolio.png" alt="Portfolio Website">
-                            
-                        </div>
-                        
-                        <div class="project-content">
-                            
-                            <p class="project-number">
-                                
-                            Project 02
-                            
-                        </p>
-                        
-                        <h3 class="project-title">
-                            
-                            Personal Portfolio
-                            
-                        </h3>
-                        
-                        <p class="project-description">
-                            
-                            A premium personal portfolio with a glassmorphism design,
-                            smooth animations, dark theme, responsive layouts,
-                            reusable components, and clean architecture.
-                            
-                        </p>
-                        
-                        <div class="project-tags">
-                            
-                            <span class="project-tag">HTML5</span>
-                            <span class="project-tag">CSS3</span>
-                            <span class="project-tag">JavaScript</span>
-                            
-                        </div>
-                        
-                        <div class="project-links">
-                            
-                            <a href="#" class="btn btn-primary">
-                                
-                                Live Demo
-                                
-                            </a>
-                            
-                            <a href="#" class="btn btn-secondary">
-                                
-                                GitHub
-                                
-                            </a>
-                            
-                        </div>
-                        
-                    </div>
-                    
-                </article>
-                -->
-
-
-
-                <!-- ==========================================
-                    PROJECT 3
-                    ===========================================
-                    
-                    <article class="project-card reveal fade-up delay-2">
-                        
-                        <div class="project-image">
-                            
-                            <img src="images/projects/business.png" alt="Business Website">
-                            
-                        </div>
-                        
-                        <div class="project-content">
-                            
-                            <p class="project-number">
-                                
-                                Project 03
-                                
-                            </p>
-                            
-                            <h3 class="project-title">
-                                
-                            Business Website
-                            
-                        </h3>
-                        
-                        <p class="project-description">
-                            
-                            A modern business website focused on improving online
-                            presence through responsive design, professional layouts,
-                            fast loading speeds, and conversion-focused sections.
-                            
-                        </p>
-                        
-                        <div class="project-tags">
-                            
-                            <span class="project-tag">HTML5</span>
-                            <span class="project-tag">CSS3</span>
-                            <span class="project-tag">JavaScript</span>
-                            
-                        </div>
-                        
-                        <div class="project-links">
-                            
-                            <a href="#" class="btn btn-primary">
-                                
-                                Live Demo
-                                
-                            </a>
-                            
-                            <a href="#" class="btn btn-secondary">
-                                
-                                GitHub
-                                
-                            </a>
-                            
-                        </div>
-                        
-                    </div>
-                    
-                </article>
-                -->
 
             </div>
 
@@ -1080,30 +949,18 @@
                         SERVICES
 ====================================================== -->
 
-    <section class="services" id="services">
+    <section class="services" id="services" aria-label="Services">
 
         <div class="container">
 
             <div class="section-header">
-                <!-- 
-                    <p class="section-subtitle">
-                        
-                        Services
-                        
-                    </p>
-                -->
 
                 <h2 class="section-title">
-
                     Services
-
                 </h2>
 
                 <p class="section-description">
-
-                    I build clean, responsive, and modern websites that provide
-                    excellent user experiences and meet business goals.
-
+                    What I can help you build — focused on the skills I actually use.
                 </p>
 
             </div>
@@ -1116,49 +973,33 @@
 
                 <article class="service-card reveal fade-up">
 
-                    <div class="service-icon">
-
+                    <div class="service-icon" aria-hidden="true">
                         <i class="fa-solid fa-laptop-code"></i>
-
                     </div>
 
                     <h3 class="service-title">
-
                         Front-End Development
-
                     </h3>
 
                     <p class="service-description">
-
-                        Responsive websites built with clean HTML, CSS,
-                        and JavaScript.
-
+                        Responsive and interactive web interfaces using HTML, CSS and JavaScript.
                     </p>
 
                     <div class="service-features">
 
                         <div class="service-feature">
-
-                            <i class="fa-solid fa-check"></i>
-
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
                             Responsive Layouts
-
                         </div>
 
                         <div class="service-feature">
-
-                            <i class="fa-solid fa-check"></i>
-
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
                             Modern UI
-
                         </div>
 
                         <div class="service-feature">
-
-                            <i class="fa-solid fa-check"></i>
-
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
                             Clean Code
-
                         </div>
 
                     </div>
@@ -1171,49 +1012,33 @@
 
                 <article class="service-card reveal fade-up delay-1">
 
-                    <div class="service-icon">
-
-                        <i class="fa-solid fa-mobile-screen-button"></i>
-
+                    <div class="service-icon" aria-hidden="true">
+                        <i class="fa-solid fa-cart-shopping"></i>
                     </div>
 
                     <h3 class="service-title">
-
-                        Responsive Design
-
+                        E-Commerce Development
                     </h3>
 
                     <p class="service-description">
-
-                        Websites optimized for desktop,
-                        tablet, and mobile devices.
-
+                        Product catalogs, authentication, carts, checkout flows and database-backed functionality.
                     </p>
 
                     <div class="service-features">
 
                         <div class="service-feature">
-
-                            <i class="fa-solid fa-check"></i>
-
-                            Mobile First
-
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            Supabase / MySQL
                         </div>
 
                         <div class="service-feature">
-
-                            <i class="fa-solid fa-check"></i>
-
-                            Cross Browser
-
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            User Accounts
                         </div>
 
                         <div class="service-feature">
-
-                            <i class="fa-solid fa-check"></i>
-
-                            Fast Loading
-
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            Admin Dashboards
                         </div>
 
                     </div>
@@ -1226,49 +1051,33 @@
 
                 <article class="service-card reveal fade-up delay-2">
 
-                    <div class="service-icon">
-
-                        <i class="fa-solid fa-layer-group"></i>
-
+                    <div class="service-icon" aria-hidden="true">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
                     </div>
 
                     <h3 class="service-title">
-
-                        UI Implementation
-
+                        Responsive Web Design
                     </h3>
 
                     <p class="service-description">
-
-                        Convert Figma or Framer designs
-                        into pixel-perfect websites.
-
+                        Interfaces optimized for desktop, tablet and mobile devices.
                     </p>
 
                     <div class="service-features">
 
                         <div class="service-feature">
-
-                            <i class="fa-solid fa-check"></i>
-
-                            Pixel Perfect
-
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            Mobile First
                         </div>
 
                         <div class="service-feature">
-
-                            <i class="fa-solid fa-check"></i>
-
-                            Semantic HTML
-
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            Cross Browser
                         </div>
 
                         <div class="service-feature">
-
-                            <i class="fa-solid fa-check"></i>
-
-                            Reusable Components
-
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            No Layout Shifts
                         </div>
 
                     </div>
@@ -1281,82 +1090,112 @@
 
                 <article class="service-card reveal fade-up">
 
-                    <div class="service-icon">
-
-                        <i class="fa-solid fa-code"></i>
-
+                    <div class="service-icon" aria-hidden="true">
+                        <i class="fa-solid fa-layer-group"></i>
                     </div>
 
                     <h3 class="service-title">
-
-                        Website Redesign
-
+                        UI Implementation
                     </h3>
 
                     <p class="service-description">
-
-                        Modernize outdated websites
-                        with improved UX and visuals.
-
+                        Turning requirements and design concepts into polished, functional interfaces.
                     </p>
 
-                </article>
+                    <div class="service-features">
 
+                        <div class="service-feature">
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            Pixel Accurate
+                        </div>
 
+                        <div class="service-feature">
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            Semantic HTML
+                        </div>
 
-                <!-- ===================================== -->
-
-                <article class="service-card reveal fade-up delay-1">
-
-                    <div class="service-icon">
-
-                        <i class="fa-solid fa-gauge-high"></i>
+                        <div class="service-feature">
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            Accessible
+                        </div>
 
                     </div>
 
-                    <h3 class="service-title">
-
-                        Performance Optimization
-
-                    </h3>
-
-                    <p class="service-description">
-
-                        Improve loading speed,
-                        responsiveness,
-                        and user experience.
-
-                    </p>
-
                 </article>
 
+            </div>
+
+        </div>
+
+    </section>
 
 
-                <!-- ===================================== -->
 
-                <article class="service-card reveal fade-up delay-2">
+    <!-- =====================================================
+                    EDUCATION
+====================================================== -->
 
-                    <div class="service-icon">
+    <section class="education" id="education" aria-label="Education">
 
-                        <i class="fa-solid fa-screwdriver-wrench"></i>
+        <div class="container">
 
-                    </div>
+            <div class="section-header">
 
-                    <h3 class="service-title">
+                <h2 class="section-title">Education</h2>
 
-                        Maintenance
+            </div>
 
-                    </h3>
+            <div class="education-card reveal fade-up">
 
-                    <p class="service-description">
+                <div class="education-icon" aria-hidden="true">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
 
-                        Website updates,
-                        bug fixes,
-                        and continuous improvements.
+                <div class="education-info">
 
-                    </p>
+                    <p class="education-degree">Bachelor of Science in Information Technology</p>
 
-                </article>
+                    <p class="education-institution">University of Gujrat</p>
+
+                    <span class="education-status">Currently Pursuing</span>
+
+                </div>
+
+            </div>
+
+            <div class="education-card reveal fade-up">
+
+                <div class="education-icon" aria-hidden="true">
+                    <i class="fa-solid fa-university"></i>
+                </div>
+
+                <div class="education-info">
+
+                    <p class="education-degree">Intermediate in Pre-Engineering</p>
+
+                    <p class="education-institution">Askaria College</p>
+
+                    <span class="education-status">2021-2023</span>
+
+                </div>
+
+            </div>
+
+            <div class="education-card reveal fade-up">
+
+                <div class="education-icon" aria-hidden="true">
+                    <i class="fa-solid fa-school"></i>
+                </div>
+
+                <div class="education-info">
+
+                    <p class="education-degree">Matriculation in Science</p>
+
+                    <p class="education-institution">New Jinnah Public School</p>
+
+                    <span class="education-status">2021</span>
+
+                </div>
 
             </div>
 
@@ -1370,25 +1209,17 @@
                         CONTACT
 ====================================================== -->
 
-    <section class="contact" id="contact">
+    <section class="contact" id="contact" aria-label="Contact">
 
         <div class="container">
 
             <div class="section-header">
-                <!-- 
-                    <p class="section-subtitle">
-                        Contact
-                    </p>
-                -->
 
-                <h2 class="section-title">
-                    Contact
-                </h2>
+                <h2 class="section-title">Contact</h2>
 
                 <p class="section-description">
-                    Whether you have a project, internship opportunity, or just want
-                    to connect, feel free to reach out. I'll get back to you as soon
-                    as possible.
+                    Whether you have a project, opportunity, or just want to connect —
+                    feel free to reach out.
                 </p>
 
             </div>
@@ -1397,66 +1228,68 @@
 
                 <!-- ==========================================
                     CONTACT INFORMATION
-            =========================================== -->
+                =========================================== -->
 
                 <div class="contact-info">
 
                     <div class="contact-card glass">
 
-                        <div class="contact-icon">
-
+                        <div class="contact-icon" aria-hidden="true">
                             <i class="fa-solid fa-envelope"></i>
-
                         </div>
 
                         <div>
-
                             <h5>Email</h5>
-
-                            <a href="mailto:syedhashir495@gmail.com">
-
+                            <a href="mailto:syedhashir495@gmail.com" target="_blank" rel="noopener noreferrer">
                                 <p>syedhashir495@gmail.com</p>
-
                             </a>
-
                         </div>
 
                     </div>
 
                     <div class="contact-card glass">
 
-                        <div class="contact-icon">
-
-                            <i class="fa-solid fa-phone"></i>
-
+                        <div class="contact-icon" aria-hidden="true">
+                            <i class="fa-brands fa-linkedin"></i>
                         </div>
 
                         <div>
+                            <h5>LinkedIn</h5>
+                            <a href="https://linkedin.com/in/hashir-abrar-shah" target="_blank"
+                                rel="noopener noreferrer">
+                                <p>hashir-abrar-shah</p>
+                            </a>
+                        </div>
 
-                            <h5>Phone</h5>
+                    </div>
 
-                            <a href="https://wa.me/923209798572?text=Hi%20Hashir,%0A%0AI%20visited%20your%20portfolio%20and%20I'm%20interested%20in%20discussing%20a%20website%20project%20with%20you."
-                                target="_blank">
+                    <div class="contact-card glass">
+
+                        <div class="contact-icon" aria-hidden="true">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+
+                        <div>
+                            <h5>GitHub</h5>
+                            <a href="https://github.com/hashir-shah-56" target="_blank" rel="noopener noreferrer">
+                                <p>hashir-shah-56</p>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="contact-card glass">
+
+                        <div class="contact-icon" aria-hidden="true">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+
+                        <div>
+                            <h5>WhatsApp</h5>
+                            <a href="https://wa.me/+923209798572?text=I'm%20Can%20we%20Talk?"
+                                target="_blank" rel="noopener noreferrer">
                                 <p>+92 3209798572</p>
                             </a>
-                        </div>
-
-                    </div>
-
-                    <div class="contact-card glass">
-
-                        <div class="contact-icon">
-
-                            <i class="fa-solid fa-location-dot"></i>
-
-                        </div>
-
-                        <div>
-
-                            <h5>Location</h5>
-
-                            <p>Rawalpindi, Pakistan</p>
-
                         </div>
 
                     </div>
@@ -1467,33 +1300,27 @@
 
                 <!-- ==========================================
                     CONTACT FORM
-            =========================================== -->
+                =========================================== -->
 
-                <form class="contact-form glass">
+                <form class="contact-form glass" id="contact-form" novalidate>
 
                     <div class="form-row">
 
                         <div class="form-group">
 
-                            <label for="name">
+                            <label for="name">Full Name</label>
 
-                                Full Name
-
-                            </label>
-
-                            <input type="text" id="name" placeholder="John Doe" required>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required
+                                autocomplete="name">
 
                         </div>
 
                         <div class="form-group">
 
-                            <label for="email">
+                            <label for="email">Email Address</label>
 
-                                Email Address
-
-                            </label>
-
-                            <input type="email" id="email" placeholder="john@email.com" required>
+                            <input type="email" id="email" name="email" placeholder="john@email.com" required
+                                autocomplete="email">
 
                         </div>
 
@@ -1501,32 +1328,23 @@
 
                     <div class="form-group">
 
-                        <label for="subject">
+                        <label for="subject">Subject</label>
 
-                            Subject
-
-                        </label>
-
-                        <input type="text" id="subject" placeholder="Project Inquiry">
+                        <input type="text" id="subject" name="subject" placeholder="Project Inquiry">
 
                     </div>
 
                     <div class="form-group">
 
-                        <label for="message">
+                        <label for="message">Message</label>
 
-                            Message
-
-                        </label>
-
-                        <textarea id="message" rows="8" placeholder="Tell me about your project..." required></textarea>
+                        <textarea id="message" name="message" rows="7" placeholder="Tell me about your project..."
+                            required></textarea>
 
                     </div>
 
                     <button type="submit" class="btn btn-primary">
-
                         Send Message
-
                     </button>
 
                 </form>
@@ -1553,18 +1371,11 @@
 
                 <div class="footer-about">
 
-                    <h3>
-
-                        Hashir Shah
-
-                    </h3>
+                    <h3>Hashir Shah</h3>
 
                     <p>
-
-                        Front-End Developer passionate about
-                        creating modern, responsive,
-                        and engaging digital experiences.
-
+                        Front-End Developer &amp; BS IT Student building responsive,
+                        user-focused web experiences.
                     </p>
 
                 </div>
@@ -1575,63 +1386,25 @@
 
                 <div class="footer-links">
 
-                    <h3>
-
-                        Quick Links
-
-                    </h3>
+                    <h3>Quick Links</h3>
 
                     <ul>
 
-                        <li>
+                        <li><a href="#home">Home</a></li>
 
-                            <a href="#home">
+                        <li><a href="#about">About</a></li>
 
-                                Home
+                        <li><a href="#experience">Experience</a></li>
 
-                            </a>
+                        <li><a href="#skills">Skills</a></li>
 
-                        </li>
+                        <li><a href="#projects">Projects</a></li>
 
-                        <li>
+                        <li><a href="#services">Services</a></li>
 
-                            <a href="#about">
+                        <li><a href="#education">Education</a></li>
 
-                                About
-
-                            </a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="#skills">
-
-                                Skills
-
-                            </a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="#projects">
-
-                                Projects
-
-                            </a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="#contact">
-
-                                Contact
-
-                            </a>
-
-                        </li>
+                        <li><a href="#contact">Contact</a></li>
 
                     </ul>
 
@@ -1643,30 +1416,23 @@
 
                 <div class="footer-social">
 
-                    <h3>
-
-                        Connect
-
-                    </h3>
+                    <h3>Connect</h3>
 
                     <div class="social-icons">
 
-                        <a href="https://github.com/hashir-shah-56" target="_blank">
-
-                            <i class="fa-brands fa-github"></i>
-
+                        <a href="https://github.com/hashir-shah-56" target="_blank" rel="noopener noreferrer"
+                            aria-label="GitHub profile">
+                            <i class="fa-brands fa-github" aria-hidden="true"></i>
                         </a>
 
-                        <a href="https://linkedin.com/in/hashir-abrar-shah" target="_blank">
-
-                            <i class="fa-brands fa-linkedin"></i>
-
+                        <a href="https://linkedin.com/in/hashir-abrar-shah" target="_blank" rel="noopener noreferrer"
+                            aria-label="LinkedIn profile">
+                            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
                         </a>
 
-                        <a href="https://instagram.com/syed_hashir_shah10" target="_blank">
-
-                            <i class="fa-brands fa-instagram"></i>
-
+                        <a href="https://instagram.com/syed_hashir_shah10" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram profile">
+                            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                         </a>
 
                     </div>
@@ -1681,19 +1447,7 @@
 
             <div class="footer-bottom">
 
-                <p>
-
-                    © 2026 Hashir Shah. All Rights Reserved.
-
-                </p>
-
-                <!-- 
-                    <p>
-                        
-                        Designed & Developed by Hashir Shah
-                        
-                    </p>
-                -->
+                <p>© 2026 Syed Hashir Abrar Shah. All Rights Reserved.</p>
 
             </div>
 
@@ -1707,21 +1461,133 @@
                 BACK TO TOP BUTTON
 ====================================================== -->
 
-    <button class="back-to-top" aria-label="Back to Top">
+    <button class="back-to-top" aria-label="Back to top">
 
-        <i class="fa-solid fa-arrow-up"></i>
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
 
     </button>
 
-    <div class="preloader">
+    <div class="preloader" aria-hidden="true">
 
         <div class="loader"></div>
 
     </div>
 
-    <div class="cursor-glow"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
 
-    <script src="/script.js"></script>
+
+
+    <!-- =====================================================
+            CASE STUDY MODAL — SHAH EMBROIDERY & ART
+====================================================== -->
+
+    <div class="case-study-overlay" id="case-study-overlay" role="dialog" aria-modal="true" aria-labelledby="cs-title"
+        aria-hidden="true">
+
+        <div class="case-study-modal">
+
+            <button class="case-study-close js-close-case-study" aria-label="Close case study">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+
+            <div class="cs-header">
+
+                <span class="cs-label">Case Study</span>
+
+                <h2 class="cs-title" id="cs-title">Shah Embroidery &amp; Art</h2>
+
+                <p class="cs-subtitle">
+                    A responsive e-commerce platform for a real handmade embroidery and artwork business.
+                </p>
+
+            </div>
+
+            <div class="cs-tags">
+                <span class="cs-tag">HTML5</span>
+                <span class="cs-tag">CSS3</span>
+                <span class="cs-tag">JavaScript</span>
+                <span class="cs-tag">Supabase</span>
+                <span class="cs-tag">Git / GitHub</span>
+                <span class="cs-tag">Netlify</span>
+            </div>
+
+            <div class="cs-divider"></div>
+
+            <div class="cs-section">
+                <p class="cs-section-title">Project Overview</p>
+                <p>
+                    Shah Embroidery &amp; Art is a fully functional e-commerce website built for a handmade
+                    embroidery and artwork business. The goal was to create a polished online presence where
+                    customers can browse products, place orders, and manage their accounts — and where the
+                    business owner can manage inventory through a secure admin dashboard.
+                </p>
+            </div>
+
+            <div class="cs-section">
+                <p class="cs-section-title">My Role</p>
+                <p>
+                    I was the sole developer responsible for the entire project — from planning and design
+                    to frontend implementation, Supabase backend integration, and deployment on Netlify.
+                </p>
+            </div>
+
+            <div class="cs-section">
+                <p class="cs-section-title">Key Features</p>
+                <ul>
+                    <li>Dynamic product catalog with search and category filtering</li>
+                    <li>Customer authentication — sign up, login, and account management</li>
+                    <li>Shopping cart and wishlist functionality</li>
+                    <li>Custom-order request flow</li>
+                    <li>Checkout process</li>
+                    <li>Owner-only admin dashboard for product and order management</li>
+                    <li>Supabase integration for database, auth, and storage</li>
+                    <li>Fully responsive across all device sizes</li>
+                </ul>
+            </div>
+
+            <div class="cs-section">
+                <p class="cs-section-title">Development Approach</p>
+                <p>
+                    Built with plain HTML, CSS, and vanilla JavaScript — no frameworks — keeping the
+                    codebase simple and maintainable. Supabase handled authentication, real-time database
+                    queries, and asset storage. The project was version-controlled with Git and deployed
+                    to Netlify.
+                </p>
+            </div>
+
+            <div class="cs-section">
+                <p class="cs-section-title">Challenges &amp; Solutions</p>
+                <ul>
+                    <li>Implementing row-level security in Supabase to restrict admin routes to the owner only</li>
+                    <li>Building a cart and wishlist system with persistent state across sessions</li>
+                    <li>Ensuring the layout remained polished across mobile, tablet, and desktop breakpoints</li>
+                    <li>Managing product image storage and retrieval efficiently through Supabase Storage</li>
+                </ul>
+            </div>
+
+            <div class="cs-cta">
+
+                <a href="https://shah-embroidery-and-art.netlify.app/" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-primary" aria-label="View live demo">
+                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                    Live Demo
+                </a>
+
+                <a href="https://github.com/hashir-shah-56/Shah-Embroidery-and-Art" target="_blank"
+                    rel="noopener noreferrer" class="btn btn-secondary" aria-label="View source on GitHub">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="script.js"></script>
 
 </body>
 
