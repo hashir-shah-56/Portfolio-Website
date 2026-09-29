@@ -598,8 +598,6 @@ const roles = [
 
     "BS IT Student",
 
-    "E-Commerce Developer",
-
     "Responsive Web Designer",
 
     "Open for Opportunities"

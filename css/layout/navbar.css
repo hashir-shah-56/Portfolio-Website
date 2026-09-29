@@ -135,6 +135,8 @@
 
 .nav-center.active {
     display: flex;
+
+    width: 50%;
 }
 
 .nav-links {

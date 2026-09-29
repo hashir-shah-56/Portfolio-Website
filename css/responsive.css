@@ -44,10 +44,24 @@
 
     }
 
-    .about-content {
+    .about .container .about-content {
 
-        gap: var(--space-48);
+        gap: 0px;
 
+    }
+
+    .about-image {
+        height: 300px;
+        width: 300px;
+        position: relative;
+
+    }
+
+    .about-image img {
+
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
     }
 
     .project-card {
@@ -73,6 +87,10 @@
 
     }
 
+    .hero-image{
+        display: none;
+    }
+    
     /* ---------- EXPERIENCE ---------- */
 
     .experience-card-header {
@@ -107,9 +125,9 @@
 
         top: 65px;
 
-        left: 50%;
+        left: 54%;
 
-        transform: translateX(-50%);
+        transform: translateX(50%);
 
         width: 50%;
 
@@ -123,7 +141,9 @@
 
         border: 1px solid rgb(68, 68, 68);
 
-        border-radius: var(--radius-lg);
+        border-top-left-radius: var(--radius-lg);
+
+        border-bottom-left-radius: var(--radius-lg);
 
         background: rgb(15, 15, 15);
 
@@ -224,11 +244,30 @@
 
     /* ---------- ABOUT ---------- */
 
-    .about-content {
+    .about .container .about-content {
+        /*border: 1px solid var(--color-accent);*/
         display: flex;
         flex-direction: column;
+        align-items: center;
         align-content: center;
+        text-align: center;
+        padding-left: 30px;
+        padding-right: 30px;
+        gap: 10px;
+    }
 
+    .about-image {
+        height: 300px;
+        width: 300px;
+        position: relative;
+
+    }
+
+    .about-image img {
+
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
     }
 
     .about-buttons {
@@ -368,6 +407,31 @@
 
     }
 
+    .about-image {
+        height: 200px;
+        width: 200px;
+        position: relative;
+
+    }
+
+    .about-image img {
+
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .about .container .about-content {
+        /*border: 1px solid var(--color-accent);*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
     .about-stats {
 
         grid-template-columns: 1fr;
@@ -455,8 +519,6 @@
 
     }
 
-
-
     .about-info {
         /*display: flex;
         flex-direction: column;
@@ -473,15 +535,14 @@
         word-break: normal;
     }
 
-    .about-content {
+    .about .container .about-content {
+        /*border: 1px solid var(--color-accent);*/
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
-
-        /*border: 1px solid rgb(177, 189, 175);*/
+        text-align: center;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 
 
@@ -584,6 +645,12 @@
 
     }
 
+    .about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .about-content .about-image {
         size: 100%;
         width: 100%;
@@ -625,9 +692,15 @@
 
     }
 
-    .about-content {
+    .about .container .about-content {
         /*border: 1px solid var(--color-accent);*/
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 
     .about-info {
@@ -730,5 +803,7 @@
         padding-block: 160px 80px;
 
     }
+
+
 
 }
