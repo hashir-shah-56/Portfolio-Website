@@ -468,6 +468,10 @@
 
     }
 
+    .footer .container .footer-container .footer-about{
+        display:none;
+    }
+
 }
 
 
