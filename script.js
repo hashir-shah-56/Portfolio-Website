@@ -768,7 +768,7 @@ if (backToTop) {
 
 
 /* =======================================================
-                CURSOR GLOW
+                 GLOW
 ======================================================= */
 
 const cursorGlow = document.querySelector('.cursor-glow');
