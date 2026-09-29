@@ -90,7 +90,7 @@
     .hero-image{
         display: none;
     }
-    
+
     /* ---------- EXPERIENCE ---------- */
 
     .experience-card-header {
@@ -109,7 +109,17 @@
 
     /* ---------- EDUCATION ---------- */
 
-    .education-card {
+    .education-card1 {
+
+        max-width: 100%;
+
+    }
+    .education-card2 {
+
+        max-width: 100%;
+
+    }
+    .education-card3 {
 
         max-width: 100%;
 
@@ -580,7 +590,29 @@
 
     }
 
-    .education-card {
+    .education-card1 {
+
+        padding: var(--space-24);
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: var(--space-20);
+
+    }
+    .education-card2 {
+
+        padding: var(--space-24);
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: var(--space-20);
+
+    }
+    .education-card3 {
 
         padding: var(--space-24);
 
@@ -674,7 +706,29 @@
 
     }
 
-    .education-card {
+    .education-card1 {
+
+        padding: var(--space-20);
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: var(--space-16);
+
+    }
+    .education-card2 {
+
+        padding: var(--space-20);
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: var(--space-16);
+
+    }
+    .education-card3 {
 
         padding: var(--space-20);
 
