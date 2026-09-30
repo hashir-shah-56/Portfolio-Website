@@ -768,39 +768,146 @@ if (backToTop) {
 
 
 /* =======================================================
-                 GLOW
+                 COORDINATED CURSOR AND AMBIENT GLOW
 ======================================================= */
 
 const cursorGlow = document.querySelector('.cursor-glow');
 
-if (cursorGlow && window.matchMedia("(pointer:fine)").matches) {
-
+if (cursorGlow) {
+    const glowEnabled = window.matchMedia(
+        '(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)'
+    );
     let mouseX = 0;
     let mouseY = 0;
     let glowX = 0;
     let glowY = 0;
+    let frameId = null;
+    let active = false;
+    let lastTime = 0;
+    let pointerTarget = null;
+    let refreshTarget = false;
+    const nativeCursorSelector = 'input, textarea, select, [contenteditable]:not([contenteditable="false"]), .preloader:not(.hide)';
+    const interactiveSelector = 'a[href], button, .btn, .project-card, [role="button"], summary';
 
-    document.addEventListener("mousemove", (e) => {
-
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-
-    });
-
-    function animateCursor() {
-
-        glowX += (mouseX - glowX) * 0.18;
-        glowY += (mouseY - glowY) * 0.18;
-
-        cursorGlow.style.transform =
-            `translate(${glowX}px, ${glowY}px)`;
-
-        requestAnimationFrame(animateCursor);
-
+    function scheduleCursor() {
+        if (active && frameId === null) frameId = requestAnimationFrame(animateCursor);
     }
 
-    animateCursor();
+    function updateCursorState() {
+        const native = Boolean(pointerTarget?.closest(nativeCursorSelector));
+        const interactive = pointerTarget?.closest(interactiveSelector);
+        const hover = !native && Boolean(interactive) &&
+            !interactive.matches(':disabled, [aria-disabled="true"]');
+        cursorGlow.classList.toggle('is-native', native);
+        cursorGlow.classList.toggle('is-hover', hover);
+        document.documentElement.classList.toggle('custom-cursor-active', !native);
+    }
 
+    function hideGlow() {
+        if (frameId !== null) cancelAnimationFrame(frameId);
+        frameId = null;
+        active = false;
+        lastTime = 0;
+        pointerTarget = null;
+        refreshTarget = false;
+        cursorGlow.classList.remove('is-active', 'is-hover', 'is-pressed', 'is-native');
+        document.documentElement.classList.remove('custom-cursor-active');
+    }
+
+    function animateCursor(time) {
+        frameId = null;
+        if (refreshTarget) {
+            pointerTarget = document.elementFromPoint(mouseX, mouseY);
+            refreshTarget = false;
+        }
+        // Exact latest coordinates for the ring; only the ambient glow trails.
+        cursorGlow.style.setProperty('--pointer-x', `${mouseX}px`);
+        cursorGlow.style.setProperty('--pointer-y', `${mouseY}px`);
+        updateCursorState();
+        // Preserve the original .18 easing at 60Hz, consistent on faster displays.
+        const elapsed = lastTime ? Math.min(time - lastTime, 50) : 1000 / 60;
+        lastTime = time;
+        const blend = 1 - Math.pow(1 - .18, elapsed / (1000 / 60));
+        glowX += (mouseX - glowX) * blend;
+        glowY += (mouseY - glowY) * blend;
+        const settled = Math.hypot(mouseX - glowX, mouseY - glowY) < .1;
+        if (settled) {
+            glowX = mouseX;
+            glowY = mouseY;
+        }
+        cursorGlow.style.setProperty('--cursor-x', `${glowX}px`);
+        cursorGlow.style.setProperty('--cursor-y', `${glowY}px`);
+        cursorGlow.classList.add('is-active');
+        if (!settled) frameId = requestAnimationFrame(animateCursor);
+        else lastTime = 0;
+    }
+
+    function trackPointer(event) {
+        if (event.pointerType === 'touch' || document.hidden) {
+            hideGlow();
+            return;
+        }
+        mouseX = event.clientX;
+        mouseY = event.clientY;
+        pointerTarget = event.target instanceof Element ? event.target : null;
+        // First entry appears at the pointer, never flying in from (0, 0).
+        if (!active) {
+            glowX = mouseX;
+            glowY = mouseY;
+            active = true;
+        }
+        scheduleCursor();
+    }
+
+    function changeTarget(event) {
+        if (!active || event.pointerType === 'touch') return;
+        pointerTarget = event.target instanceof Element ? event.target : null;
+        scheduleCursor();
+    }
+
+    function pressCursor(event) {
+        if (event.pointerType === 'touch') {
+            hideGlow();
+            return;
+        }
+        trackPointer(event);
+        cursorGlow.classList.add('is-pressed');
+    }
+
+    function releaseCursor() {
+        cursorGlow.classList.remove('is-pressed');
+    }
+
+    function refreshCursorTarget() {
+        if (!active) return;
+        // Scrolling/layout changes can move a control under a stationary pointer.
+        refreshTarget = true;
+        scheduleCursor();
+    }
+
+    function syncGlowCapability() {
+        hideGlow();
+        const listeners = [
+            ['pointermove', trackPointer], ['pointerover', changeTarget],
+            ['pointerdown', pressCursor], ['pointerup', releaseCursor],
+            ['pointercancel', hideGlow], ['scroll', refreshCursorTarget]
+        ];
+        for (const [type, handler] of listeners) {
+            document.removeEventListener(type, handler, true);
+            if (glowEnabled.matches) {
+                document.addEventListener(type, handler, { passive: true, capture: true });
+            }
+        }
+    }
+
+    document.documentElement.addEventListener('pointerleave', hideGlow);
+    window.addEventListener('resize', refreshCursorTarget);
+    window.addEventListener('blur', hideGlow);
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) hideGlow();
+    });
+    glowEnabled.addEventListener('change', syncGlowCapability);
+    syncGlowCapability();
 }
 
 

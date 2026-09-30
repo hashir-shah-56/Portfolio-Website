@@ -388,7 +388,7 @@ Buttons have a sheen pseudo-element, CSS hover/active transforms, and JS magneti
 - Shadows: small `0 10px 25px rgba(0,0,0,.18)`; medium `0 15px 35px rgba(0,0,0,.28)`; large `0 25px 60px rgba(0,0,0,.45)`.
 - Glows: small `0 0 12px rgba(57,255,20,.18)`; medium `0 0 20px rgba(57,255,20,.25), 0 0 45px rgba(57,255,20,.12)`; large `0 0 30px rgba(57,255,20,.40), 0 0 60px rgba(57,255,20,.20)`.
 - Glass blur: **20px**. Transition tokens: **.25s/.35s/.55s ease**, with some component overrides.
-- Layer tokens: background -2, grid -1, default 1, navbar 100, dropdown 500, overlay 900, modal 950, cursor 9999. Literal overrides include cursor 0, back-to-top 1000, scroll progress 99999, preloader 999999. The dialog overlay uses 900.
+- Layer tokens: background -2, grid -1, default 1, navbar 100, dropdown 500, overlay 900, modal 950, cursor 9999. The cursor uses its token. Literal overrides include back-to-top 1000, scroll progress 99999, preloader 999999. The dialog overlay uses 900.
 
 ## Responsive Design
 
@@ -406,7 +406,7 @@ The stylesheet is predominantly desktop-first with max-width overrides. “Mobil
 | `max-height:600px` and `orientation:landscape` | Hero min-height auto; declared `padding-block:160px 80px` loses to higher-specificity Hero top/shared bottom rules. |
 | `prefers-reduced-motion:reduce` | CSS disables animations/transitions and requests auto scrolling; JS motion remains partly active. |
 
-JS uses **992px** for navigation and `(pointer:fine)` for cursor tracking. **Verified:** About remains two columns, footer stays a flex row, active mobile dropdown overflows right, and the 500px Hero portrait overflows/clips at 1024px. Hiding overflow is not proof all content fits. See [Testing and QA](#testing-and-qa).
+JS uses **992px** for navigation. Cursor tracking requires `(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)`, independent of viewport width. **Previously verified:** About remains two columns, footer stays a flex row, active mobile dropdown overflows right, and the 500px Hero portrait overflows/clips at 1024px. Hiding overflow is not proof all content fits. See [Testing and QA](#testing-and-qa).
 
 ## Animations and Interactions
 
@@ -425,16 +425,30 @@ All behavior is in [script.js](script.js); animation CSS is in [css/animations.c
 | Hero parallax handler | Writes `backgroundPositionY = scrollY * .4`; no current Hero background image makes that visibly useful. |
 | Magnetic buttons | `.btn` moves by 15% of pointer offset and resets on mouseleave. |
 | Card tilt | Project/service cards use perspective(1000px), pointer-based X/Y rotation, -8px lift, then reset. |
-| Cursor glow | Fine-pointer devices run continuous frame interpolation at .18; a 220px radial glow follows the pointer. |
+| Custom cursor | Precise 22px neon ring, 40px interactive hover, subtle press feedback, and a softer 360px ambient glow; one coordinated pointer/frame system with native text-field and accessibility fallbacks. See below. |
 | Back-to-top hover | JS -6px/1.08 scale; CSS colors/glow. |
 | Images | Native loading attributes are used. `img[data-src]` observer code exists but has no matching current images. |
 | Preloader | Full-screen dark overlay hides on window load, removed after 600ms. `.loader` has no spinner styling. Slow resources can delay dismissal. |
 | Case study | Overlay fade/panel translation, open/close classes, focus move/restore, body overflow toggle. |
-| Page visibility | Toggles `.page-hidden`; nothing uses it to pause timers/frame loops. |
+| Page visibility | Toggles `.page-hidden`; cursor independently hides/cancels its frame on document hiding or window blur. Other timers remain active. |
 
 Additional CSS utilities/keyframes include float, pulse glow, rotation, shimmer, neon borders, hover lift/scale/rotate, and the used scroll-bounce indicator. Definitions alone do not mean all effects are attached to current elements.
 
-Reduced-motion CSS and the JS-added `.reduced-motion` class disable CSS animation/transitions. JS role changes, counters, cursor frames, magnetic motion, card tilt, and explicit smooth scrolling are not comprehensively gated. Preference changes after initialization are not handled. Direct scroll/resize listeners coexist with throttle/debounce wrappers, so event handling is not exclusively throttled.
+Reduced-motion CSS and the JS-added `.reduced-motion` class disable CSS animation/transitions. Cursor tracking is disabled and responds to live preference changes. JS role changes, counters, magnetic motion, card tilt, and explicit smooth scrolling are not comprehensively gated; their preference changes after initialization are not handled. Direct scroll/resize listeners coexist with throttle/debounce wrappers, so event handling is not exclusively throttled.
+
+### Custom neon cursor architecture
+
+- **HTML:** the existing single `.cursor-glow[aria-hidden="true"]` in `index.html`, before the end-of-body `script.js`. No new DOM element or duplicate effect was added.
+- **CSS/design:** `css/animations.css` fixes the existing element to the viewport with `inset: 0` and clips both pseudo-elements using `overflow: clip`. `::after` is a **22px transparent ring with a 1.5px border**, using `--color-accent` (**#85ee00**, defined in `css/base/variable.css`). Its 8px/16px outer shadows mix that accent at 45%/20% alpha. Thin dark inner/outer keylines retain definition on green buttons and bright images. There is no center dot, blur filter, or blend mode.
+- **Ambient layer:** the existing `::before` remains **360 × 360px**, with a soft accent-to-transparent radial gradient. Opacity was reduced from .16 to **.10** so it remains secondary to the ring. Both layers stay hidden until eligible pointer activity; no additional DOM cursor was created.
+- **Position and layers:** `script.js` records one `pointermove` stream using viewport `clientX/clientY`. The shared requestAnimationFrame writes exact `--pointer-x/--pointer-y` for the ring and interpolated `--cursor-x/--cursor-y` for the ambient glow. Both use `translate3d(...) translate(-50%, -50%)`; position has no CSS transition. The ring uses the latest coordinates without deliberate lag, while only the ambient glow trails. Scrolling does not offset either layer. `--z-cursor: 9999` puts the ring above normal UI and dialog; the preloader stays above it with native cursor behavior. `pointer-events: none` and `aria-hidden` preserve clicking and keyboard access. Viewport clipping prevents cursor-generated scroll overflow.
+- **Hover/press:** delegated target handling expands the ring to **40px** over links, buttons, `.btn`, project cards, role-buttons, and summary controls, excluding disabled/aria-disabled controls. Non-clickable service, experience, skill, education, and statistic cards keep the normal ring. Width/height transitions use **180ms cubic-bezier(.2, .7, .3, 1)** without bounce or movement delay. Pointer down shrinks it to **18px**, or **34px** while hovered; pointer up restores the appropriate size. Pointer cancellation clears all cursor state. Project-card expansion indicates its contained actions; it does not make the entire article clickable.
+- **Native cursor safety:** `html.custom-cursor-active` hides native cursors only inside the matching fine-pointer/hover/no-reduced-motion media query, after JavaScript positions the ring. Over inputs, textareas, selects, and editable content, the ring hides and this class is removed so native text/control cursors work normally; the ambient glow may remain. Text selection and keyboard behavior are unchanged. Script-disabled pages never receive the hiding class. Pointer exit, blur, and tab hiding restore the native cursor.
+- **Movement/performance:** one pending frame maximum for both layers; ambient interpolation retains .18 at 60Hz with elapsed-time adjustment and stops within .1px of the target. First entry snaps directly to the pointer. Pointer handlers do not read layout or create DOM nodes. Scroll/resize target refreshes are coalesced into the same frame, with one hit test before style writes to update hover under a stationary pointer. Delegated state events do not create separate animation loops. Existing button magnetism/card tilt handlers remain separate component behaviors. There are no permanent cursor animation frames while idle, hidden, or capability-disabled.
+- **Devices/accessibility:** requires `(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)`, independent of width. Touch-only/coarse/no-pointer and reduced-motion users retain native cursor behavior, with both custom layers hidden and tracking/state listeners detached. CSS independently gates both display and native cursor hiding. Live media-query changes resynchronize listeners without duplicates; touch pointer events on hybrids clear the custom cursor until mouse/pen activity resumes. Other website motion has separate known limitations.
+- **Root cause diagnosed on 2026-09-30:** the former fixed 220px element had no top/left origin, so its static position came from its location after the footer. At a pointer position of `(500, 400)`, Edge measured its top at approximately **8325px** (`top` approximately 7925px plus pointer translation). JavaScript also overwrote CSS's `translate(-50%, -50%)`, losing centering. A literal `z-index: 0` bypassed the existing cursor token. The selector, end-of-body script loading, dimensions, and viewport coordinates were already valid; no duplicate cursor code or desktop hiding breakpoint was found. Other glow rules are component decorations, and other mousemove listeners implement button magnetism/card tilt.
+
+The targeted regression test is [tests/cursor-glow.cjs](tests/cursor-glow.cjs). It requires optional Playwright tooling and installed Microsoft Edge, not a website runtime dependency. With Playwright resolvable (for example through `NODE_PATH`), run `node tests/cursor-glow.cjs`.
 
 ## Accessibility
 
@@ -513,7 +527,7 @@ Media/resume are in capitalized `Images/`; preserve filename case/spaces. The fa
 
 ## Complete Directory Structure
 
-There are **35 maintained files: 1 HTML, 1 JavaScript, 21 CSS, 11 assets, and README**. `.git/` is local metadata and is not expanded. Temporary audit scripts are not part of the final project.
+There are **36 maintained files: 1 HTML, 1 browser JavaScript, 21 CSS, 11 assets, README, and 1 cursor regression test**. `.git/` is local metadata and is not expanded. Temporary audit tooling is not part of the final project.
 
 ```text
 /
@@ -521,6 +535,8 @@ There are **35 maintained files: 1 HTML, 1 JavaScript, 21 CSS, 11 assets, and RE
 ├── index.html                         # Content, metadata, links, dialog
 ├── script.js                          # All browser behavior
 ├── README.md                          # Maintained documentation
+├── tests/
+│   └── cursor-glow.cjs                 # Optional Playwright/Edge regression
 ├── css/
 │   ├── style.css                      # Imports and final global rules
 │   ├── responsive.css                 # Page-wide responsive overrides
@@ -659,7 +675,7 @@ The form has no effective submission/server validation. CDN resources lack Subre
 
 The 2026-09-29 audit used **headless Microsoft Edge 154.0.4258.37 on Windows**, driven by temporary Playwright tooling, at widths 1440/1024/768/393/360px and height 1000px. This is desktop emulation, not physical device testing.
 
-No committed support matrix, automated suite, or browser CI exists. Firefox, Safari, iOS Safari, Android browsers, and older versions were not tested. Modern features include IntersectionObserver, custom properties, Grid/Flexbox, clamp/min, aspect-ratio, focus-visible, backdrop-filter, and masks, without polyfills. “Cross Browser” is a capability label, not a test guarantee.
+The targeted cursor regression test uses Microsoft Edge; no general support matrix or browser CI exists. Firefox, Safari, iOS Safari, Android browsers, and older versions were not tested. Modern features include IntersectionObserver, custom properties, Grid/Flexbox, clamp/min, aspect-ratio, focus-visible, backdrop-filter, overflow clipping, and masks, without polyfills. “Cross Browser” is a capability label, not a test guarantee.
 
 ## Known Limitations
 
@@ -680,7 +696,7 @@ No committed support matrix, automated suite, or browser CI exists. Firefox, Saf
 | UI details | Counters lose “+”; header smooth navigation prevents native hash update; active links are class-only; footer year static. |
 | Content scope | Two current projects; no ScentAura live demo/case study; no Currently Learning section. |
 | SEO/performance | Missing metadata/files, duplicate fonts, large images, no measured performance scores. |
-| Validation coverage | No retained tests, cross-browser/device certification, full contrast audit, or screen-reader assessment. |
+| Validation coverage | Retained cursor regression test only; no cross-browser/device certification, full contrast audit, or screen-reader assessment. |
 
 These findings were documented without changing website functionality.
 
@@ -694,7 +710,28 @@ These findings were documented without changing website functionality.
 
 ## Testing and QA
 
-There is **no automated test suite, test directory, package test command, or CI workflow**. The audit used a temporary script/local static server and removed the script afterward. Its browser tooling is not a portfolio dependency.
+There is a targeted **`tests/cursor-glow.cjs`** browser regression test, but no package test command or CI workflow. The earlier documentation audit used a temporary script/local static server and removed that script afterward. Browser tooling is not a portfolio runtime dependency.
+
+### Custom cursor checks performed on 2026-09-30
+
+The retained Edge/Playwright test now checks both layers: exact ring coordinates on the next animation frame (before ambient interpolation settles), one DOM cursor, native cursor suppression, hover sizes for visible links/buttons/project cards and representative non-controls, press feedback, editable-field fallback, and the original movement/edge/section/scroll/idle checks. It samples all current visible navbar/Hero/About/project/contact/footer links and buttons, plus static cards and image areas; hidden dialog controls are checked separately.
+
+**Results:** Microsoft Edge **154.0.4258.37**, local `file:` page, 1000px viewport height. All **1920/1440/1366/1024px** fine-pointer runs passed, including 49 hover targets per width. The three Education card variants were additionally checked in a focused 1440px run and added to the retained target list. Touch-only emulation passed at **768/430/393/360px**, plus a **1440px** large touchscreen: both layers hidden, native cursor class absent, and no coordinate writes. No uncaught page JavaScript errors were recorded; JS syntax and whitespace checks passed.
+
+Additional browser checks verified textarea selection, modal close-button hover, pointer cancellation/exit, stationary-pointer scroll accuracy, JavaScript-disabled native cursor fallback, and reduced-motion enabled at initial load. Normal, expanded, and modal ring screenshots were visually reviewed, including the dark outline that keeps the ring visible over neon-green buttons. Tests use synthetic text without submitting the contact form or activating external destinations. These checks do not establish a frame-rate benchmark or cross-browser/device certification.
+
+Document widths before and after cursor edge movement remained **1920/1440/1366/1092px** in this run. The known 1024px page-layout overflow persists; the cursor does not add overflow. Earlier measurements below reflect their recorded font/page state. No unrelated responsive layout was changed.
+
+### Cursor checks performed on 2026-09-30
+
+Headless **Microsoft Edge 154.0.4258.37**, optional temporary Playwright installation, local `file:` page, height 1000px:
+
+- **1920, 1440, 1366, 1024px fine-pointer widths passed:** single glow, active computed gradient/layer/opacity, center within .2px of target after settling, rapid movement, all four viewport corners, all eight sections and footer after scrolling, hit testing through the glow, unchanged document width/height, and zero glow attribute mutations during an idle observation window.
+- **Interaction checks passed:** navbar Skills link, project case-study button and Escape close, contact input click/edit with synthetic data (no submission), and back-to-top activation. The glow never became the hit-test target at sampled pointer locations.
+- **Live reduced-motion enable/disable and window blur passed.** Touch-only emulation at **393px and 1440px** hid the glow and produced no coordinate style writes.
+- **No uncaught page JavaScript errors** in the desktop suite. `node --check script.js`, `node --check tests/cursor-glow.cjs`, and `git diff --check` passed. A 1440px screenshot was visually inspected for visible soft green glow and legible content.
+- Document widths were **1920/1440/1366/1041px** respectively before and after glow movement. The **1024px layout still has existing overflow**, unrelated to the clipped glow; this task does not certify or repair the wider responsive layout. Prior audit measurements used different page/font/motion state.
+- Tests verify animation scheduling/idle behavior, not a frame-rate benchmark or physical-device certification. Firefox/Safari and real touch hardware were not tested. External navigation/message delivery was not exercised.
 
 ### Checks performed on 2026-09-29
 
@@ -754,6 +791,28 @@ Code is implementation authority; README is the maintained human-readable source
 ## Changelog
 
 Dates come from Git history or the explicit audit date. Historical subjects are retained where they are the available evidence; they do not imply broader testing.
+
+### 2026-09-30 — Custom Neon Cursor System
+
+- Inspected the existing repaired ambient glow, cursor CSS, pointer/frame tracking, and component mouse handlers before implementation.
+- Reused the single `.cursor-glow` element and its one pointer/frame pipeline; added the precise ring as `::after` alongside the existing ambient `::before`.
+- Replaced the native cursor on active fine-pointer desktop surfaces with a 22px transparent neon-green ring, 1.5px border, soft accent shadows, and dark contrast keylines.
+- Added 40px interactive hover expansion with a 180ms easing transition, and subtle 18px/34px press feedback.
+- Retained the 360px interpolated ambient glow, reduced to .10 opacity; the primary ring uses exact latest viewport coordinates without interpolation.
+- Added delegated hover/press/cancel handling, scroll/resize target refresh, native editable-control fallback, and conditional system-cursor hiding.
+- Preserved fine-pointer/touch, live reduced-motion, pointer-exit, blur, hidden-page, idle-frame, and non-blocking pointer-event behavior.
+- Extended cursor regression coverage and documented the coordinated architecture, appearance, state transitions, accessibility fallback, and testing. No unrelated layout redesign.
+
+### 2026-09-30 — Cursor Glow Fix
+
+- Audited the existing HTML element, CSS/import cascade, script loading, pointer listeners, dimensions, transforms, stacking, and capability rules; retained one implementation.
+- Reproduced the invisible glow: missing fixed-position origin placed it below the viewport, and JavaScript replaced its centering transform.
+- Restored visible cursor following with viewport anchoring, preserved centering, viewport clipping, and the existing cursor z-index token instead of literal 0.
+- Changed the decoration to a restrained 360px radial gradient using the site's #85ee00 accent at .16 opacity; retained pointer-events none and aria-hidden.
+- Preserved interpolation with refresh-rate adjustment; replaced the perpetual loop with one scheduled frame that stops when settled, on pointer exit, blur, or tab hiding.
+- Added matching CSS/JS fine-pointer, hover, and reduced-motion handling, including live preference changes and touch-event suppression.
+- Added the retained cursor regression test and documented the four desktop widths, two touch emulations, interactions, positioning, idle checks, visual review, and existing 1024px overflow limitation above.
+- Updated README architecture, layer, motion, device behavior, file inventory, and testing documentation. No unrelated portfolio redesign or deployment performed.
 
 ### 2026-09-29 — Comprehensive README Documentation Update
 

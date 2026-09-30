@@ -616,28 +616,54 @@
                 CURSOR GLOW
 ======================================================= */
 
-.cursor-glow{
+.cursor-glow {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: clip;
+    z-index: var(--z-cursor);
+    opacity: 0;
+}
 
-    position:fixed;
+/* Clip the moving decoration at the viewport without adding scroll overflow. */
 
-    width:220px;
 
-    height:220px;
+.cursor-glow.is-active {
+    opacity: 1;
+}
 
-    border-radius:50%;
+/* The sharp ring shares the ambient layer's tracker, without interpolation. */
+.cursor-glow::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 22px;
+    height: 22px;
+    border: 1.5px solid var(--color-accent);
+    border-radius: 50%;
+    background: var(--color-accent);
+    box-shadow: var(--color-bg-primary) 0px 0px 30px 10px;
+    transform: translate3d(var(--pointer-x, 0px), var(--pointer-y, 0px), 0)
+        translate(-50%, -50%);
+    transition: width 180ms cubic-bezier(.2, .7, .3, 1),
+        height 180ms cubic-bezier(.2, .7, .3, 1);
+}
 
-    background:radial-gradient(circle,
-    rgba(57,255,20,.18),
-    transparent 70%);
 
-    pointer-events:none;
 
-    transform:translate(-50%,-50%);
+/* Opt in only after JS has positioned the ring; failures retain native cursors. */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    html.custom-cursor-active,
+    html.custom-cursor-active * {
+        cursor: none !important;
+    }
+}
 
-    z-index:0;
-
-    filter:blur(25px);
-
+@media (hover: none), (pointer: coarse), (pointer: none), (prefers-reduced-motion: reduce) {
+    .cursor-glow {
+        display: none;
+    }
 }
 
 
